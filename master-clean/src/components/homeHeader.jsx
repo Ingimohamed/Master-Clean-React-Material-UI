@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  createMuiTheme,
-  makeStyles,
-  ThemeProvider,
-} from "@material-ui/core/styles";
+import {createMuiTheme,makeStyles,ThemeProvider} from "@material-ui/core/styles";
 import headerimg2 from "../images/headerimg2.png";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
