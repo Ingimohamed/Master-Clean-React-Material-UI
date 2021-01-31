@@ -94,7 +94,7 @@ export default function HomeHeader() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Paper elevation={3} className={classes.root}>
+      <Paper elevation={0} className={classes.root}>
         <Container className={classes.container}>
           <Typography
             className={classes.typographyh1}

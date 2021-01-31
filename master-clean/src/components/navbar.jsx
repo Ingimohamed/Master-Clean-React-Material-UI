@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { fade, makeStyles } from '@material-ui/core/styles';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -7,26 +7,32 @@ import Typography from '@material-ui/core/Typography';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import MenuIcon from '@material-ui/icons/Menu';
 import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import profile from "../images/profile.png";
+import shopping from "../images/shopping.png";
 import NavLogo from "../images/NavLogo.png";
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
+import { Link, NavLink } from "react-router-dom";
 
 
 const useStyles = makeStyles((theme) => ({
-    NavLogo: {
-        maxWidth: "40%",
-        marginRight: '10px',
-        [theme.breakpoints.up('sm')]: {
-            maxWidth: "17%",
-            },
-      },
+  linkStyle:{
+    width: "18%",
+  },
+  NavLogo: {
+      maxWidth: "40%",
+      marginRight: '10px',
+      [theme.breakpoints.up('sm')]: {
+          maxWidth: "100%",
+          },
+    },
     appBar: {
         background: "white",
-        color:"#00527D",
+      color: "#00527D",
+      boxShadow: "2px 2px 7px grey",
     },
   grow: {
     flexGrow: 1,
@@ -64,6 +70,20 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
+  navLink: {
+    textDecoration: "none",
+    color: "#00527D",
+    paddingRight:"2rem",
+    paddingLeft:"2rem",
+  },
+  iconButton: {
+    paddingRight:"2rem",
+    paddingLeft:"2rem",
+  },
+  navIcon: {
+    width:"70%",
+  },
+
 }));
 
 export default function PrimarySearchAppBar() {
@@ -106,8 +126,12 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>
+         <NavLink to="/ShoppingCart"> My Cart </NavLink>
+      </MenuItem>
+      <MenuItem onClick={handleMenuClose}>
+          <NavLink to="/ShoppingCart"> My Cart </NavLink>
+     </MenuItem>
     </Menu>
   );
 
@@ -169,45 +193,52 @@ export default function PrimarySearchAppBar() {
     <div className={classes.grow}>
       <AppBar position="static" className={classes.appBar}>
         <Toolbar>
-         <img src={NavLogo} alt="Kitty Katty!" className={classes.NavLogo} />
+        <Link className={classes.linkStyle}  to="/"> 
+            <img src={NavLogo} alt="Kitty Katty!" className={classes.NavLogo} />
+         </Link>
+       
                  
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
            
             <IconButton aria-label="show 17 new notifications" color="inherit">
                           <Typography>
-                              Home
+               
+                <Link className={classes.navLink}  to="/"> Home </Link>
                      </Typography>
              </IconButton>
-             <IconButton aria-label="show 17 new notifications" color="inherit">
-                          <Typography>
-                              Order
+             <IconButton  aria-label="show 17 new notifications" color="inherit">
+              <Typography>
+                <NavLink className={classes.navLink} to="/Order"> Order</NavLink>
+                             
                      </Typography>
            </IconButton>
            <IconButton aria-label="show 17 new notifications" color="inherit">
-                          <Typography>
-                              Contact Us
+              <Typography>
+              <NavLink className={classes.navLink} to="/Contactus"> Contact Us</NavLink>         
                      </Typography>
             </IconButton>
             <IconButton
               aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
               color="inherit"
+              className={classes.iconButton}
             >
-              <PersonOutlineOutlinedIcon />
+              <NavLink to="/Profile">
+                <img className={classes.navIcon} src={profile} alt="profile" />
+              </NavLink>
+              
              </IconButton  >
                       
             <IconButton edge="end"
               aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleBasketMenuOpen}
+              className={classes.iconButton}
               color="inherit">
-                <Badge badgeContent={1} color="secondary">
-                   <ShoppingCartOutlinedIcon />
+              <NavLink to="/ShoppingCart">
+              <Badge badgeContent={1} color="secondary">
+                   <img className={classes.navIcon} src={shopping} alt="shopping basket"/>
                 </Badge>
+             </NavLink>
+               
                          
          </IconButton>      
                       
