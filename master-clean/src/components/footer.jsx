@@ -3,37 +3,61 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
+import Grid from '@material-ui/core/Grid';
+import phone from '../images/phone.png';
+import location from '../images/location.png';
+import msg from '../images/msg.png';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    flexGrow: 1,
     flexDirection: 'column',
-    minHeight: '100vh',
+    minHeight: 'auto',
+    backgroundColor: "#003455",
   },
   main: {
     marginTop: theme.spacing(8),
     marginBottom: theme.spacing(2),
+    maxWidth: "90%",
   },
-  footer: {
-    padding: theme.spacing(3, 2),
-    marginTop: 'auto',
-    backgroundColor:
-      theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[800],
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: "white",
+    fontWeight: "400",
+    fontSize:"18px",
   },
+  ul: {
+    listStyle: "none",
+    paddingLeft: "0",
+    float: "left",
+    marginTop: "15px",
+    marginRight: "50px",
+  },
+  li: {marginBottom:"10px",display:"flex",marginBottom:"35px",},
+  iconUser: {
+    width: "50px",
+    height: "50px",
+    position: "relative",
+    marginRight: "10px",
+    
+  },
+  iconText: {
+    fontSize: "18px",
+    fontWeight: "400",
+    textAlign: "left",
+    display: "block",
+    marginTop: "auto",
+    marginBottom:"auto",
+  },
+  ulServices: {
+    listStyle: "none",
+    textAlign: "left",
+   paddingLeft:"0px",
+  },
+  liServices:{},
 }));
 
 export default function StickyFooter() {
@@ -42,22 +66,71 @@ export default function StickyFooter() {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <Container component="main" className={classes.main} maxWidth="sm">
-        <Typography variant="h2" component="h1" gutterBottom>
-          Sticky footer
-        </Typography>
-        <Typography variant="h5" component="h2" gutterBottom>
-          {'Pin a footer to the bottom of the viewport.'}
-          {'The footer will move as the main element of the page grows.'}
-        </Typography>
-        <Typography variant="body1">Sticky footer placeholder.</Typography>
+      <Container component="main" className={classes.main}>
+        <Grid container spacing={3}>
+         
+          <Grid item xs={5}>
+            <div className={classes.paper}>
+              <ul className={classes.ul}>
+                <li className={classes.li}>
+                  <img className={classes.iconUser} src={phone} alt="" />
+                  <Typography className={classes.iconText}>
+                  +20 2 24708092
+                  </Typography>
+                </li>
+                <li className={classes.li}>
+                  <img className={classes.iconUser} src={location} alt="" />
+                  <Typography className={classes.iconText}>
+                  22 Gamal Abdul Nasser, An Nadi Al <br/>
+                  Ahli, Nasr City, Cairo Governorate, Egypt
+                  </Typography>
+                </li>
+                <li className={classes.li}>
+                  <img className={classes.iconUser} src={msg} alt="" />
+                  <Typography className={classes.iconText}>
+                      Masterclean@gmail.com
+                  </Typography>
+                </li>
+              </ul>
+            </div>
+          </Grid>
+
+          <Grid item xs={3}>
+            <div className={classes.paper}>
+              <Typography variant="h5" gutterBottom align="left">
+                  <strong>SERVICES</strong> 
+              </Typography>
+                <ul className={classes.ulServices}>
+                  <li className={classes.liServices}>Dry Clean</li>
+                  <li className={classes.liServices}>Laundry</li>
+                  <li className={classes.liServices}>Laundry App</li>
+                  <li className={classes.liServices}>Laundry Service</li>
+                  <li className={classes.liServices}>Laundry On-Demand</li>
+                  <li className={classes.liServices}>Laundry Pickup &amp;  Delivery</li>
+                  <li className={classes.liServices}>Wash &amp; Fold</li>
+                  <li className={classes.liServices}>Ironing Services</li>
+                </ul>
+            </div>
+          </Grid>
+
+          <Grid item xs={4}>
+            <div className={classes.paper}>
+            <Typography variant="h5" gutterBottom align="left">
+                <strong>ABOUT US</strong> 
+              </Typography>
+              <Typography className={classes.iconText}>
+                  We offer the best laundering <br/> experience in the area.
+              </Typography>
+            </div>
+          </Grid>
+        </Grid>
       </Container>
-      <footer className={classes.footer}>
+
+      {/* <footer className={classes.footer}>
         <Container maxWidth="sm">
           <Typography variant="body1">My sticky footer can be found here.</Typography>
-          <Copyright />
         </Container>
-      </footer>
+      </footer> */}
     </div>
   );
 }

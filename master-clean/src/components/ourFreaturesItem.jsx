@@ -14,20 +14,23 @@ const useStyles = theme => ({
   },
   paper: {
     padding: theme.spacing(2),
-    margin: 'auto',
-    maxWidth: 500,
+    marginLeft: 'auto',
+    marginRight: "auto",
+    marginBottom:"104px",
+    maxWidth: "475px",
+    height:"171px",
     padding: "30px",
     borderRadius: "20px",
   },
   image: {
-    maxWidth: "100%",
+    width: "90px",
     marginRight: "20px",
     float: "left",
     height: "auto",
   },
   imageBox: {
-    width: "158px",
-    height:"166px",
+    width: "101px",
+    height:"99px",
   },
   cartTitle: {
     fontWeight: "600",
@@ -53,8 +56,6 @@ class OurFeaturesItem extends Component {
         <Grid container spacing={2}>
           <Grid item>
             <div className={classes.imageBox}>
-            {/* {this.state.images.map(image => 
-              <img className={classes.image} src={image} alt=""/>)} */}
                 <img className={classes.image} src={this.state.images} alt="feature"/>
             </div>
           </Grid>

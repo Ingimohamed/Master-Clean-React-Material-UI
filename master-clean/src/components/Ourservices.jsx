@@ -1,20 +1,20 @@
-import React from "react";
+import React, {Component} from "react";
 import Typography from "@material-ui/core/Typography";
 import {
   createMuiTheme,
-  makeStyles,
+  withStyles,
   ThemeProvider,
 } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import howitworks1 from '../images/howitworks1.png';
-import howitworks2 from '../images/howitworks2.png';
-import howitworks3 from '../images/howitworks3.png';
-import howitworks4 from '../images/howitworks4.png';
+import service1 from '../images/service1.png';
+import service2 from '../images/service2.png';
+import service3 from '../images/service3.png';
+
 
 const theme = createMuiTheme({});
-const useStyles = makeStyles((theme) => ({
+const useStyles = theme => ({
   container: {
     padding: "3rem 0",
   },
@@ -25,12 +25,22 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "600",
     padding: "3rem 0",
   },
-}));
+  ThemeProvider: {
+    background: "white",
+  },
+  img: {
+    width:"65%",
+  },
+});
 
-export default function OurServices() {
-  const classes = useStyles();
-  return (
-    <ThemeProvider theme={theme}>
+class OurServices extends Component {
+  state = {
+    images: [service1, service2, service3]
+  };
+  render() { 
+    const { classes } = this.props;
+    return ( 
+      <div className={classes.ThemeProvider}>
       <Container>
         <Grid container className={classes.container}>
           <Grid item xs={12}>
@@ -38,20 +48,15 @@ export default function OurServices() {
               Our Services
             </Typography>
           </Grid>
-          <Grid item xs={3}>
-            <img src={howitworks1} alt=""/>
-          </Grid>
-          <Grid item xs={3}>
-           <img src={howitworks2} alt=""/>
-          </Grid>
-          <Grid item xs={3}>
-           <img src={howitworks3} alt=""/>
-          </Grid>
-          <Grid item xs={3}>
-           <img src={howitworks4} alt=""/>
-          </Grid>
+          {this.state.images.map(image => <Grid key={image} item xs={4}>
+              <img className={classes.img} src={image} alt=""/>
+              </Grid>)}
         </Grid>
       </Container>
-    </ThemeProvider>
-  );
+    </div>
+     );
+  }
 }
+ 
+export default withStyles(useStyles) (OurServices);
+

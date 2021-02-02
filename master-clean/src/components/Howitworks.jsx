@@ -38,7 +38,6 @@ class Howitworks extends Component {
     images: [howitworks1, howitworks2, howitworks3, howitworks4]
   };
   render() { 
-    //const classes = useStyles();
     const { classes } = this.props;
     return ( 
       <ThemeProvider theme={theme}>
