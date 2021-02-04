@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import Typography from "@material-ui/core/Typography";
 import {
   createMuiTheme,
@@ -33,11 +33,35 @@ const useStyles = (theme) => ({
 class OurFeatures extends Component {
   state = {
     cards: [
-      { id: 1, title:"Personalised experiences", images: feature1, body:"We take utmost care of your clothes, the laundry is done according to the cloth type and the nature of stains." },
-      { id: 2, title:"Quality", images: feature2, body:"We use the best products, to assure that your favorite clothes are always there for you to wear." },
-      { id: 3, title:"Over 20 years of experience", images: feature3, body:"We have been in this field for more than 20 years and that makes us professional in what we do." },
-      { id: 4, title:"Fast service", images: feature4, body:"jjakhbcasbchbascbasj skas c as chbasjcjasbcascbas cabscjascbascbasj" }
-    ]
+      {
+        id: 1,
+        title: "Personalised experiences",
+        images: feature1,
+        body:
+          "We take utmost care of your clothes, the laundry is done according to the cloth type and the nature of stains.",
+      },
+      {
+        id: 2,
+        title: "Quality",
+        images: feature2,
+        body:
+          "We use the best products, to assure that your favorite clothes are always there for you to wear.",
+      },
+      {
+        id: 3,
+        title: "Over 20 years of experience",
+        images: feature3,
+        body:
+          "We have been in this field for more than 20 years and that makes us professional in what we do.",
+      },
+      {
+        id: 4,
+        title: "Fast service",
+        images: feature4,
+        body:
+          "jjakhbcasbchbascbasj skas c as chbasjcjasbcascbas cabscjascbascbasj",
+      },
+    ],
   };
 
   render() {
@@ -54,7 +78,12 @@ class OurFeatures extends Component {
 
             {this.state.cards.map((card) => (
               <Grid item xs={6}>
-                 <OurFeaturesItem key={card.id} title={card.title} body={card.body} images={card.images}  />
+                <OurFeaturesItem
+                  key={card.id}
+                  title={card.title}
+                  body={card.body}
+                  images={card.images}
+                />
               </Grid>
             ))}
           </Grid>

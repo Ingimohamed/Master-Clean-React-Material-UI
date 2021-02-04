@@ -125,12 +125,6 @@ export default function StickyFooter() {
           </Grid>
         </Grid>
       </Container>
-
-      {/* <footer className={classes.footer}>
-        <Container maxWidth="sm">
-          <Typography variant="body1">My sticky footer can be found here.</Typography>
-        </Container>
-      </footer> */}
     </div>
   );
 }

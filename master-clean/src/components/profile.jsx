@@ -1,23 +1,38 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
+import ProfilePaper from './ProfilePaper';
+import Container from '@material-ui/core/Container';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
-// const useStyles = makeStyles({
-//     root: {
-//       width: '100%',
-//       maxWidth: 500,
-//     },
-// });
-  
-const Profile = () => {
-    return ( 
-        <div>
-        <Typography variant="h1" component="h2" gutterBottom align="center">
-            Profile Page
+const useStyles =(theme) => ({
+  title: {
+    fontFamily: "'Poppins', sans-serif",
+    color: "#00527D",
+    fontWeight: "700",
+    fontSize:"2.5rem",
+  },
+  container: {
+    padding:"3rem 0 3rem 0",
+  },
+});
+  class Profile extends Component {
+    state = {  }
+    render() { 
+      const { classes } = this.props;
+      return ( 
+        <Container maxWidth="sm" className={classes.container}>
+        <CssBaseline />
+        <Typography className={classes.title}  variant="h1" component="h2" gutterBottom align="center">
+             My Dashboard
      </Typography>
-    </div>
-     );
-}
- 
-export default Profile;
+            
+      <ProfilePaper/>
+    </Container>
+       );
+    }
+  }
+   
+  export default withStyles(useStyles) (Profile);
+
 
