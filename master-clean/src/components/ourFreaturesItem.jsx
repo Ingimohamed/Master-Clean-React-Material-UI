@@ -3,11 +3,11 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import ButtonBase from '@material-ui/core/ButtonBase';
-import feature1 from "../images/feature1.png";
-import feature2 from "../images/feature2.png";
-import feature3 from "../images/feature3.png";
-import feature4 from "../images/feature4.png";
+// import ButtonBase from '@material-ui/core/ButtonBase';
+// import feature1 from "../images/feature1.png";
+// import feature2 from "../images/feature2.png";
+// import feature3 from "../images/feature3.png";
+// import feature4 from "../images/feature4.png";
 const useStyles = theme => ({
   root: {
     flexGrow: 1,
