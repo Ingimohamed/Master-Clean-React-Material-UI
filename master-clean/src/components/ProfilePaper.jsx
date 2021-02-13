@@ -71,7 +71,7 @@ export default function ProfilePaper() {
         <Grid item xs={4}>
             <Paper elevation={3} className={classes.box}>
             <img className={classes.imgBox} src={box1} alt="order" />
-            <NavLink className={classes.navLink} to="#"> MY ORDERS</NavLink>
+            <Link className={classes.navLink} to="/MyOrders"> MY ORDERS</Link>
             <div className={classes.boxBody}>
                 <Grid container>
                     <Grid className={classes.box1Text} item xs={6}>SEG79927065</Grid>
@@ -91,7 +91,7 @@ export default function ProfilePaper() {
         <Grid item xs={4}>
             <Paper elevation={3} className={classes.box}>
             <img className={classes.imgBox} src={mapbox2} alt="order" />
-            <NavLink className={classes.navLink} to="#"> MY ORDERS</NavLink>
+            <Link className={classes.navLink} to="/AddressBook"> Address Book</Link>
             <div className={classes.boxBody}>
               <Typography align="left" className={classes.box1Text}>
                 Hassan Ma’moon Nasr City,<br/>
@@ -107,7 +107,7 @@ export default function ProfilePaper() {
         <Grid item xs={4}>
             <Paper elevation={3} className={classes.box}>
             <img className={classes.imgBox} src={settingbox3} alt="order" />
-            <NavLink className={classes.navLink} to="#"> MY ORDERS</NavLink>
+            <NavLink className={classes.navLink} to="/AccountSetting">Account Settings</NavLink>
             <div className={classes.boxBody}>
                 <Grid container>
                     <Grid className={classes.box1Text} item xs={6}>Phone</Grid>

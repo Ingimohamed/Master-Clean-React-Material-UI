@@ -118,20 +118,14 @@ export default function PrimarySearchAppBar() {
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
+     
     >
-      <MenuItem onClick={handleMenuClose}>
+      {/* <MenuItem onClick={handleMenuClose}>
          <NavLink to="/ShoppingCart"> My Cart </NavLink>
       </MenuItem>
       <MenuItem onClick={handleMenuClose}>
           <NavLink to="/ShoppingCart"> My Cart </NavLink>
-     </MenuItem>
+     </MenuItem> */}
     </Menu>
   );
 
@@ -147,20 +141,13 @@ export default function PrimarySearchAppBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
+        <Link className={classes.navLink}  to="/"> Home </Link>
       </MenuItem>
       <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={12} color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
+        <NavLink className={classes.navLink} to="/Order"> Order</NavLink>
+      </MenuItem>
+      <MenuItem>
+        <NavLink className={classes.navLink} to="/Contactus"> Contact Us</NavLink> 
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -169,9 +156,11 @@ export default function PrimarySearchAppBar() {
           aria-haspopup="true"
           color="inherit"
         >
-          <PersonOutlineOutlinedIcon />
+         <NavLink to="/Profile">
+                <img className={classes.navIcon} src={profile} alt="profile" />
+          </NavLink>
+          
         </IconButton>
-        <p>Profile</p>
           </MenuItem>
 
     <MenuItem onClick={handleBasketMenuOpen}>
@@ -181,9 +170,12 @@ export default function PrimarySearchAppBar() {
         aria-haspopup="true"
         color="inherit"
         >
-        <ShoppingCartOutlinedIcon />
+        <NavLink to="/ShoppingCart">
+              <Badge badgeContent={1} color="secondary">
+                   <img className={classes.navIcon} src={shopping} alt="shopping basket"/>
+                </Badge>
+             </NavLink>
         </IconButton>
-        <p>Basket</p>
     </MenuItem>
           
     </Menu>

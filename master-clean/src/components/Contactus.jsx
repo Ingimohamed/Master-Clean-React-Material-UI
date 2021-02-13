@@ -66,9 +66,6 @@ const useStyles = theme => ({
     fontSize: "2.5rem",
     marginBottom:"20px",
   },
-  backg: {
-    backgroundColor:"white",
-  },
   blue: {
     color: "#00527D",
     fontWeight: "300",

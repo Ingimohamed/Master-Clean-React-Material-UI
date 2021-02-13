@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+body{
+  background-color: white!important;
+}
 
 .App-logo {
   height: 40vmin;
@@ -14,7 +17,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -45,3 +48,36 @@
 }
 .mapouter{position:relative;text-align:right;height:500px;width:600px;}
 .gmap_canvas {overflow:hidden;background:none!important;height:450px;width:100%;}
+  
+.heart-checkbox{
+  width: 30px!important;
+  height: 30px!important;
+  background-color:#E6E6E6!important;
+  box-shadow: none!important;
+}
+.heart-checkbox::before{
+  width: 30px!important;
+  height: 30px!important;
+  background-color:#E6E6E6!important;
+  right:15px!important;
+}
+.heart-checkbox::after{
+  width: 30px!important;
+  height: 30px!important;
+  background-color:#E6E6E6!important;
+  bottom:15px!important;
+}
+.heart-checkbox.checked{
+  background-color:#e2264d!important;
+}
+.heart-checkbox.checked::before{
+   background-color:#e2264d!important;
+}
+.heart-checkbox.checked::after{
+   background-color:#e2264d!important;
+}
+.outside-img{
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}

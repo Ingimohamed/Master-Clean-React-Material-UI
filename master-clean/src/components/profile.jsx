@@ -5,6 +5,7 @@ import ProfilePaper from './ProfilePaper';
 import Container from '@material-ui/core/Container';
 import ProfileMyCart from './ProfileMycart';
 import AllRights from './AllRights';
+import { Link, NavLink } from "react-router-dom";
 
 const useStyles =(theme) => ({
   title: {
@@ -16,10 +17,6 @@ const useStyles =(theme) => ({
   },
   container: {
     padding:"3rem 6rem 3rem 6rem",
-  },
-  background: {
-    backgroundColor: "white",
-    boxShadow:"inset 0px 0px 8px grey",
   },
 });
   class Profile extends Component {

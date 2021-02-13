@@ -8,6 +8,9 @@ import Order from './components/Order';
 import Contactus from './components/Contactus';
 import Profile from './components/profile';
 import ShoppingCart from './components/ShoppingCart';
+import MyOrder from './components/myOrders';
+import AddressBook from './components/addressBook';
+import AccountSetting from './components/accountSettings';
 
 function App() {
   return (
@@ -18,7 +21,12 @@ function App() {
           <Route path="/Order" component={ Order } />
           <Route path="/Contactus" component={Contactus} />
           <Route path="/Profile" component={Profile} />
-          <Route path="/ShoppingCart" component={ ShoppingCart } />
+          <Route path="/ShoppingCart" component={ShoppingCart} />
+          
+          <Route path="/MyOrders" component={MyOrder} />
+          <Route path="/AddressBook" component={AddressBook} />
+          <Route path="/AccountSetting" component={AccountSetting} />
+          
           <Route path="/" component={ Home } />
         </Switch>
       </div>
