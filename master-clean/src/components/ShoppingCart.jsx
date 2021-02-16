@@ -80,7 +80,7 @@ const useStyles = theme => ({
               <ItemsNumber totalCounters={this.state.counters.filter(c => c.value > 0).length} />
               <Grid container>
                 <Grid item className={classes.left}>
-                  <Button className={classes.contOrderBtn}>Continue Ordering</Button>
+                  <Button className={classes.contOrderBtn} href="/ContOrdering">Continue Ordering</Button>
                 </Grid>
               </Grid>
         <main className="container">

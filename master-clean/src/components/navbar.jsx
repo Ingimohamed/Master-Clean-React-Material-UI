@@ -20,7 +20,10 @@ import { Link, NavLink } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   linkStyle:{
-    width: "18%",
+    width: "100%",
+    [theme.breakpoints.up('sm')]: {
+      width: "18%",
+      },
   },
   NavLogo: {
       maxWidth: "40%",

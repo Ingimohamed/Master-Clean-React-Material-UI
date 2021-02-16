@@ -11,6 +11,7 @@ import ShoppingCart from './components/ShoppingCart';
 import MyOrder from './components/myOrders';
 import AddressBook from './components/addressBook';
 import AccountSetting from './components/accountSettings';
+import ContOrdering from './components/contOrdering';
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
           <Route path="/MyOrders" component={MyOrder} />
           <Route path="/AddressBook" component={AddressBook} />
           <Route path="/AccountSetting" component={AccountSetting} />
+
+          <Route path="/ContOrdering" component={ContOrdering} />
           
           <Route path="/" component={ Home } />
         </Switch>

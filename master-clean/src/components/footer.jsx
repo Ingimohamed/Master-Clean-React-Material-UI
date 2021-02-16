@@ -69,7 +69,7 @@ export default function StickyFooter() {
       <Container component="main" className={classes.main}>
         <Grid container spacing={3}>
          
-          <Grid item xs={5}>
+          <Grid item md={5} xs={12}>
             <div className={classes.paper}>
               <ul className={classes.ul}>
                 <li className={classes.li}>
@@ -95,7 +95,7 @@ export default function StickyFooter() {
             </div>
           </Grid>
 
-          <Grid item xs={3}>
+          <Grid item md={3} xs={12}>
             <div className={classes.paper}>
               <Typography variant="h5" gutterBottom align="left">
                   <strong>SERVICES</strong> 
@@ -113,7 +113,7 @@ export default function StickyFooter() {
             </div>
           </Grid>
 
-          <Grid item xs={4}>
+          <Grid item md={4} xs={12}>
             <div className={classes.paper}>
             <Typography variant="h5" gutterBottom align="left">
                 <strong>ABOUT US</strong> 

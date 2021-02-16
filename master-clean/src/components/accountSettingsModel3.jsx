@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
+import IconButton from '@material-ui/core/IconButton';
+import addingaddress from '../images/addingaddress.png';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -16,6 +18,13 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
+  imgIcon: {
+    width: "55%",
+    float:"right",
+},
+iconButton: {
+    float:"right",
+},
 }));
 
 export default function UpdatePassword() {
@@ -31,10 +40,10 @@ export default function UpdatePassword() {
   };
 
   return (
-    <div>
-      <button type="button" onClick={handleOpen}>
-        react-transition-group
-      </button>
+    <span>
+       <IconButton onClick={handleOpen} className={classes.iconButton}>
+            <img className={classes.imgIcon} src={addingaddress} alt="addingaddress"/>     
+        </IconButton>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -49,11 +58,11 @@ export default function UpdatePassword() {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <h2 id="transition-modal-title">Transition modal</h2>
+            <h2 id="transition-modal-title">Transition modal 3</h2>
             <p id="transition-modal-description">react-transition-group animates me.</p>
           </div>
         </Fade>
       </Modal>
-    </div>
+    </span>
   );
 }
