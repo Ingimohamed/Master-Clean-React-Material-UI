@@ -3,6 +3,8 @@
 }
 body{
   background-color: white!important;
+  color:#00527D!important;
+  font-family: "Poppins", sans-serif!important;
 }
 
 .App-logo {
@@ -46,7 +48,7 @@ body{
   width: 100%;
   /* The width is the width of the web page */
 }
-.mapouter{position:relative;text-align:right;height:500px;width:600px;}
+/* .mapouter{position:relative;text-align:right;height:500px;width:600px;} */
 .gmap_canvas {overflow:hidden;background:none!important;height:450px;width:100%;}
   
 .heart-checkbox{
@@ -81,3 +83,201 @@ body{
   justify-content: center;
   margin: 0;
 }
+
+/*cont ordering page*/
+.MuiAccordion-root:before{
+  background-color: transparent!important;
+}
+.col-form-label{
+    padding-top: calc(.375rem + 1px);
+    padding-bottom: calc(.375rem + 1px);
+    margin-bottom: 0;
+    font-size: inherit;
+    line-height: 1.5;
+    text-align: left;
+    display: block;
+    color: #00527D;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+.input{
+    border: 1px solid #00517F;
+    border-radius: 10px;
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.input:focus{
+  outline:none;
+}
+.mb-1{margin-bottom: 1rem;}
+.mb-3{margin-bottom: 3rem;}
+.mb-340{margin-bottom: 340px;}
+.pr2{padding-right: 10px;}
+.pl2{padding-left: 10px;}
+.pr{padding-right: 5px!important;}
+.pl{padding-left: 5px!important;}
+.pt-5{padding-top: 3rem;}
+.pb-1{padding-bottom: 0.5rem;}
+.signInBtn{
+    border: none!important;
+    background-color: white!important;
+    border-radius: 16px!important;
+    font-size: 1.3rem!important;
+    padding: 3px 32px!important;
+    color: #00527D!important;
+    font-weight: 500!important;
+    outline: none!important;
+    letter-spacing: 2px!important;
+    font-family: "Poppins", sans-serif!important;
+    box-shadow: 0 5px 11px 0 rgb(0 0 0 / 18%), 0 4px 15px 0 rgb(0 0 0 / 15%)!important;
+}
+.signInBtn:focus{
+  outline:none!important;
+}
+.mapLocation.mapouter.gmap_canvas iframe{
+    width:100%!important;
+    height: inherit!important;
+}
+.textAlignLeft{
+  text-align: left;
+  display: block;
+}
+.direction{
+  direction: rtl;
+}
+.paddOne{
+  padding-right: 25px;
+}
+.paddTwo{
+  padding-right: 18px;
+}
+.addressTitle{
+  font-weight: 700!important;
+  margin-bottom: 1.5rem!important;
+  font-family: "Poppins", sans-serif;
+  color: #00527D;
+  font-size: 1.75rem;
+  text-align: left;
+  display: block;
+}
+.selectFormControl{
+  width:100%;
+}
+.MuiNativeSelect-icon {
+  font-size: 16px;
+  top: calc(50% - 21px)!important;
+  color: #00527D;
+  right: 0;
+  position: absolute;
+  pointer-events: none;
+  border: 1px solid #00517F;
+  border-radius: 10px;
+  width: 21%!important;
+  height: 100%!important;
+}
+.NativeSelect{
+  color: #00527D;
+}
+.MuiRadio-colorSecondary.Mui-checked {
+  color: #C3E5F0!important;
+}
+.ccvImg{
+  vertical-align: middle;
+  border-style: none;
+  width: 84%;
+  margin: 0px 20px;
+}
+.custom-file{
+  position: relative;
+    display: inline-block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    margin-bottom: 0;
+    box-sizing: border-box;
+    font-size: 17px;
+    font-weight: 400;
+    color: #00527D;
+    font-family: "Poppins", sans-serif;
+}
+.custom-file-input{
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: calc(1.5em + .75rem + 2px);
+  margin: 0;
+  opacity: 0;
+  overflow: visible;
+  font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    box-sizing: border-box;
+}
+.custom-file-label{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  height: calc(1.5em + .75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #00517F;
+  background-color: #fff;
+  border: 1px solid #00517F;
+  border-radius: 0;
+  font-size: 14px;
+  transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  display: inline-block;
+  margin-bottom: .5rem;
+  box-sizing: border-box;
+  cursor: default;
+  text-align: left;
+}
+.custom-file-label::after{
+  background-color: #C1E5F2;
+  color: #00527D;
+  content: attr(data-browse);
+  position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    display: block;
+    height: calc(1.5em + .75rem);
+    padding: .375rem .75rem;
+    line-height: 1.5;
+    color: #495057;
+    content: "VALIDATE";
+    background-color: #e9ecef;
+    border-left: inherit;
+    border-radius: 0 .25rem .25rem 0;
+    box-sizing: border-box;
+}
+.paynowBtn {
+  float: right!important;
+  border-radius: 12px!important;
+  width: 80%!important;
+  font-weight: 700!important;
+  font-size: 18px!important;
+  text-transform: none!important;
+  
+  font-size: 17px!important;
+  color: #00527D!important;
+  font-family: "Poppins", sans-serif!important;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%)!important;
+  padding: .5rem 2.14rem!important;
+}
+/* /cont ordering page*/
+
+
