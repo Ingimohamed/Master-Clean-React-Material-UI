@@ -3,13 +3,10 @@ import {createMuiTheme,makeStyles,ThemeProvider} from "@material-ui/core/styles"
 import headerimg2 from "../images/headerimg2.png";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
-import Modal from "@material-ui/core/Modal";
-import Backdrop from "@material-ui/core/Backdrop";
-import Fade from "@material-ui/core/Fade";
-
+import SignUpModal from './homeSignupModal';
+import LoginModal from './homeLoginModal';
+import Grid from '@material-ui/core/Grid';
 const theme = createMuiTheme({
   status: {
     danger: "#00527D",
@@ -42,27 +39,6 @@ const useStyles = makeStyles((theme) => ({
   container: {
     padding: "18% 10%",
   },
-  btn: {
-    background: "#00527D",
-    color: "white",
-    fontWeight: "400",
-    borderRadius: "30px",
-    border: "none",
-    width: "170px",
-    height: "45px",
-    marginRight: "15px",
-    outline: "none",
-
-    "&:hover": {
-      background: "#003957",
-    },
-  },
-
-  modal: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
   paper: {
     backgroundColor: theme.palette.background.paper,
     border: "2px solid #000",
@@ -76,6 +52,7 @@ export default function HomeHeader() {
 
   const [open, setOpen] = React.useState(false);
 
+
   const handleOpen = () => {
     setOpen(true);
   };
@@ -84,12 +61,13 @@ export default function HomeHeader() {
     setOpen(false);
     };
     
+    const [open2, setOpen2] = React.useState(false);
     const handleOpen2 = () => {
-        setOpen(true);
+        setOpen2(true);
       };
     
       const handleClose2 = () => {
-        setOpen(false);
+        setOpen2(false);
       };
 
   return (
@@ -111,66 +89,10 @@ export default function HomeHeader() {
           >
             Sign up now and make your first order
           </Typography>
-          <Box component="span" m={2}>
-            <Button
-              onClick={handleOpen}
-              className={classes.btn}
-              variant="contained"
-              color="primary"
-            >
-              Sign up
-            </Button>
-            <Modal
-              aria-labelledby="transition-modal-title"
-              aria-describedby="transition-modal-description"
-              className={classes.modal}
-              open={open}
-              onClose={handleClose}
-              closeAfterTransition
-              BackdropComponent={Backdrop}
-              BackdropProps={{
-                timeout: 500,
-              }}
-            >
-              <Fade in={open}>
-                <div className={classes.paper}>
-                  <h2 id="transition-modal-title">Transition modal one</h2>
-                  <p id="transition-modal-description">
-                    react-transition-group animates me.
-                  </p>
-                </div>
-              </Fade>
-            </Modal>
-
-            <Button  onClick={handleOpen2} className={classes.btn} variant="contained" color="primary">
-                          Login
-            </Button>
-                      
-            <Modal
-              aria-labelledby="transition-modal-title"
-              aria-describedby="transition-modal-description"
-              className={classes.modal}
-              open={open}
-              onClose={handleClose2}
-              closeAfterTransition
-              BackdropComponent={Backdrop}
-              BackdropProps={{
-                timeout: 500,
-              }}
-            >
-              <Fade in={open}>
-                <div className={classes.paper}>
-                  <h2 id="transition-modal-title">Transition modal Two</h2>
-                  <p id="transition-modal-description">
-                    react-transition-group animates me.
-                  </p>
-                </div>
-              </Fade>
-            </Modal>
-
-                      
-
-          </Box>
+          <Grid container>
+            <Grid item><SignUpModal /></Grid> 
+            <Grid item> <LoginModal/></Grid>      
+          </Grid>
         </Container>
       </Paper>
     </ThemeProvider>

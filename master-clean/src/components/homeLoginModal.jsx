@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { Confirm } from 'react-st-modal';
+import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import LoginContent from './loginContent';
 import CloseSignup from './signUpCloseBtn';
 import ConfirmBtn from './okBtn';
-import IconButton from '@material-ui/core/IconButton';
-import addingaddress from '../images/addingaddress.png';
 
 
 const useStyles = theme => ({
@@ -27,25 +26,19 @@ const useStyles = theme => ({
       background: "#003957",
     },
   },
-  iconButton: {
-    float:"right",
-  },
-  imgIcon: {
-    width: "55%",
-    float:"right",
-},
 });
 
 
 
-class UpdateAccountInfo extends Component {
+class LoginModal extends Component {
     state = {  }
   render() { 
     const { classes } = this.props;
         return ( 
-          <span>
-            <IconButton className={classes.iconButton}
-             onClick={async () => {
+          <div>
+            <Button
+           className={classes.btn}
+            onClick={async () => {
               const result = await Confirm(<LoginContent />, "", <ConfirmBtn/>,<CloseSignup/>);
               
               if (result) {
@@ -53,13 +46,13 @@ class UpdateAccountInfo extends Component {
               } else {
                 // Сonfirmation not confirmed
               }
-              }}
-            >
-            <img className={classes.imgIcon} src={addingaddress} alt="addingaddress"/>     
-        </IconButton>
-        </span>
+            }}
+          >
+           Login
+          </Button>
+        </div>
          );
     }
 }
  
-export default withStyles(useStyles) (UpdateAccountInfo);
+export default withStyles(useStyles) (LoginModal);

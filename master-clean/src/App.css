@@ -294,4 +294,132 @@ body{
 }
 /* /cont ordering page*/
 
+/* Sign Up Modal Home */
+.Modal-module_dialog__2UBIn{
+  max-width: 868px!important;
+  border-radius: 4rem!important;
+  padding: 21px 36px;
+  box-shadow: 0 5px 11px 0 rgb(0 0 0 / 18%), 0 4px 15px 0 rgb(0 0 0 / 15%)!important;
+  position: relative!important;
+    display: flex!important;
+    flex-direction: column!important;
+    width: 100%!important;
+    pointer-events: auto!important;
+    background-color: #fff!important;
+    background-clip: padding-box!important;
+    outline: 0!important;
+}
+p{
+  color:#00527D;
+  text-align: center;
+  font-size: 19px;
+  font-weight: bold;
+}
+h4 {
+  width: 100%; 
+  text-align: center; 
+  border-bottom: 1px solid #00527D; 
+  line-height: 0.1em;
+  margin: 10px 0 20px; 
+  color: #00527D;
+  mix-blend-mode: normal;
+  margin-top: 20px;
+  letter-spacing: 2px;
+} 
 
+h4 span { 
+   background:#fff; 
+   padding:0 10px; 
+}
+.modal-header{
+  border-bottom: none;
+}
+.signup-logo{
+  display: block;
+  width: 38%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.close{
+    position: absolute;
+    width: 21%;
+    top: 33px;
+    left: 24%;
+}
+.modal-middle{
+  position: relative;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1rem;
+}
+  .border-bottomm{
+  border-bottom: 1px solid #00527D;
+  margin-top: 15px;
+  }
+
+  label.label{
+    color:#00527D!important;
+    font-weight: bold!important;
+    margin: 18px 16px 7px 16px!important;
+}
+.form-control:focus{
+  outline:none!important;
+}
+.form-control {
+  background-color: #F3F3F3!important;
+  border: none!important;
+  border-radius: 20px!important;
+  display: block!important;
+    width: 100%!important;
+    height: calc(1.5em + .75rem + 2px)!important;
+    padding: .375rem .75rem!important;
+    font-size: 1rem!important;
+    font-weight: 400!important;
+    line-height: 1.5!important;
+    color: #495057!important;
+    background-clip: padding-box!important;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out!important;
+  }
+  .modal-footer{
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .signupBtn-modal{
+    border: none!important;
+    background-color: #F3F3F3!important;
+    border-radius: 16px!important;
+    font-size: 1.5rem!important;
+    padding: 3px 32px!important;
+    color: #00527D!important;
+    font-weight: 500!important;
+    outline: none!important;
+    letter-spacing: 2px!important;
+   }
+   .centered{
+     margin-left: auto!important;
+     margin-right: auto!important;
+   }
+   .Button-module_--primary__1ZLkB{
+     display:none!important;
+   }
+   .Modal-module_modalButtonPlace__AYeOm{
+     position: absolute!important;
+     top: 1px!important;
+     background-color: transparent!important;
+   }
+   .Modal-module_modalButtonPlace__AYeOm>button{
+     height: 77px;
+   }
+   .Modal-module_modalButtonPlace__AYeOm>button:focus{
+     outline:none;
+   }
+   .Button-module_--light__3HiwO{
+     background-color: transparent!important;
+   }
+   .Modal-module_overlay__21YAk{
+    overflow-x: hidden!important;
+    overflow-y: auto!important;
+    padding-top: 116px!important;
+   }
+/* /Sign Up Modal Home */
