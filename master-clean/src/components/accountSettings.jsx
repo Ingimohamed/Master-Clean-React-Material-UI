@@ -114,9 +114,6 @@ class AccountSetting extends Component {
                         <div className={classes.updateInfoBox}>
                             <Typography class={classes.titles}>
                                Account Information 
-                                {/* <IconButton className={classes.iconButton}>
-                                    <img className={classes.imgIcon} src={addingaddress} alt="addingaddress"/>     
-                                </IconButton> */}
                                 <UpdateAccountInfo />
                           
                             </Typography>

@@ -5,6 +5,7 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import IconButton from '@material-ui/core/IconButton';
 import addingaddress from '../images/addingaddress.png';
+import UpdatePasswordContent from './accountSettingsModel3Password';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -14,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
+    border: 'none',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
@@ -57,10 +58,7 @@ export default function UpdatePassword() {
         }}
       >
         <Fade in={open}>
-          <div className={classes.paper}>
-            <h2 id="transition-modal-title">Transition modal 3</h2>
-            <p id="transition-modal-description">react-transition-group animates me.</p>
-          </div>
+          <UpdatePasswordContent/>
         </Fade>
       </Modal>
     </span>
