@@ -73,7 +73,7 @@ class Order extends Component {
         <Container>
           <Grid container className={classes.container}>
             {this.state.orders.map((order) => (
-              <Grid item xs={4}>
+              <Grid item sm={4} xs={12}>
                 <DetailedAccordion key={order.id} images={order.images} />
               </Grid>
             ))}

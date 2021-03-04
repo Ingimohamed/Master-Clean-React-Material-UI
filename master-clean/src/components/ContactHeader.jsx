@@ -28,9 +28,15 @@ const useStyles = makeStyles((theme) => ({
   },
   typographyh1: {
     color: "#00527D",
-    fontSize: "70px",
+    fontSize: "30px",
     fontWeight: "600",
     fontFamily: "'Poppins', sans-serif",
+    [theme.breakpoints.up('sm')]: {
+      fontSize: "50px",
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: "70px",
+    },
   },
   typographyh3: {
     color: "#00527D",
@@ -39,7 +45,13 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "'Poppins', sans-serif",
   },
   container: {
-    padding: "18% 10%",
+    padding: "59% 10%",
+    [theme.breakpoints.up('sm')]: {
+      padding: "30% 10%",
+    },
+    [theme.breakpoints.up('md')]: {
+      padding: "18% 10%",
+    },
   },
 }));
 

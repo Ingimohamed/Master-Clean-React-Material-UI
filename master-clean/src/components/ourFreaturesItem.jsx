@@ -13,14 +13,16 @@ const useStyles = theme => ({
     flexGrow: 1,
   },
   paper: {
-    padding: theme.spacing(2),
     marginLeft: 'auto',
     marginRight: "auto",
     marginBottom:"104px",
     maxWidth: "475px",
-    height:"171px",
-    padding: "30px",
+    height:"auto",
+    padding: "18px 3px 15px 5px",
     borderRadius: "20px",
+    [theme.breakpoints.up('sm')]: {
+     padding:"30px",
+    },
   },
   image: {
     width: "90px",
@@ -54,12 +56,12 @@ class OurFeaturesItem extends Component {
       <div className={classes.root}>
       <Paper elevation={0} className={classes.paper}>
         <Grid container spacing={2}>
-          <Grid item>
+          <Grid xs={4} item>
             <div className={classes.imageBox}>
                 <img className={classes.image} src={this.state.images} alt="feature"/>
             </div>
           </Grid>
-          <Grid item xs={12} sm container>
+          <Grid item xs={8} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
                 <Typography gutterBottom variant="subtitle1" align="left" className={classes.cartTitle}>

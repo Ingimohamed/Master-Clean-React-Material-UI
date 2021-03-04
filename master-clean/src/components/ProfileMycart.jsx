@@ -12,10 +12,13 @@ const useStyles = theme => ({
     myCart:{
         width: "100%",
         border: "1px solid #CAE7F1",
-        padding: "26px",
+        padding: "3px",
         borderRadius: "45px",
         boxShadow: "0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)",
-        margin:"90px 0",
+        margin: "90px 0",
+        [theme.breakpoints.up('sm')]: {
+            padding: "26px",
+        },
     },
     mycartIcon: {
         width: "5%",
@@ -47,18 +50,27 @@ const useStyles = theme => ({
         paddingTop: "7px",
         paddingBottom: "7px",
         outline: "none",
-        width: "48%",
+        width: "100%",
         marginBottom: "10px",
-        marginTop:"40px",
+        marginTop: "40px",
+        [theme.breakpoints.up('sm')]: {
+            width: "48%",
+        },
     },
     productCart: {
         width: "100%",
-        padding: "59px 19px",
+        padding: "25px 0px",
         borderRadius: "20px",
-      boxShadow:"0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)",
+        boxShadow: "0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)",
+        [theme.breakpoints.up('sm')]: {
+            padding: "59px 19px",
+      },
     },
     col6Grid: {
-        padding:"26px!important",
+        padding: "21px 0px",
+        [theme.breakpoints.up('sm')]: {
+            padding: "26px",
+      },
     },
     orderImage: {
         width: "72%",
@@ -81,6 +93,12 @@ const useStyles = theme => ({
     margAuto: {
         marginTop:"auto",
     },
+    cartItemInfo: {
+        textAlign: "center",
+        [theme.breakpoints.up('sm')]: {
+            textAlign:"left",
+        },
+    },
 });
 
 class ProfileMyCart extends Component {
@@ -94,15 +112,15 @@ class ProfileMyCart extends Component {
             </div>
             <img className={classes.mycartIcon} src={mycarticon} alt="mycarticon" />
             <Typography align="left" className={classes.mycartText}>My Cart</Typography>
-        <Grid container spacing={3}>
-          <Grid item xs={6} className={classes.col6Grid}>
+        <Grid container>
+          <Grid item xs={12} md={6} className={classes.col6Grid}>
                     <Paper className={classes.productCart}>
                         <Grid container>
-                            <Grid item xs={5}>
+                            <Grid item sm={5} xs={12}>
                                 <img className={classes.orderImage} src={ordertshirt} alt="tshirt"/>
                             </Grid>
-                            <Grid item xs={4}>
-                                <Typography align="left"> 
+                            <Grid item sm={4} xs={12}>
+                                <Typography className={classes.cartItemInfo}> 
                                     <span className={classes.orderText1}>Shirt <br/></span>
                                     <span>
                                         <span className={classes.orderText2}>Dry Clean <br/></span>
@@ -110,20 +128,20 @@ class ProfileMyCart extends Component {
                                     </span>
                             </Typography>
                             </Grid>
-                            <Grid className={classes.margAuto} item xs={3}>
+                            <Grid className={classes.margAuto} item sm={3} xs={12}>
                             <Typography className={classes.orderText1}>20.00 EGP</Typography>
                             </Grid>
                         </Grid>
             </Paper>
           </Grid>
-          <Grid item xs={6} className={classes.col6Grid}>
+          <Grid item xs={12} md={6} className={classes.col6Grid}>
                     <Paper className={classes.productCart}>
                     <Grid container>
-                            <Grid item xs={5}>
+                            <Grid item sm={5} xs={12}>
                                 <img className={classes.orderImage} src={orderpullover} alt="pullover"/>
                             </Grid>
-                            <Grid item xs={4}>
-                                <Typography align="left"> 
+                            <Grid item sm={4} xs={12}>
+                                <Typography className={classes.cartItemInfo}> 
                                     <span className={classes.orderText1}>Shirt <br/></span>
                                     <span>
                                         <span className={classes.orderText2}>Dry Clean <br/></span>
@@ -131,7 +149,7 @@ class ProfileMyCart extends Component {
                                     </span>
                             </Typography>
                             </Grid>
-                            <Grid className={classes.margAuto} item xs={3}>
+                            <Grid className={classes.margAuto} item sm={3} xs={12}>
                             <Typography className={classes.orderText1}>20.00 EGP</Typography>
                             </Grid>
                         </Grid>

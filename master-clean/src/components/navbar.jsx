@@ -26,11 +26,11 @@ const useStyles = makeStyles((theme) => ({
       },
   },
   NavLogo: {
-      maxWidth: "40%",
+      maxWidth: "58%",
       marginRight: '10px',
       [theme.breakpoints.up('sm')]: {
           maxWidth: "100%",
-          },
+    },
     },
     appBar: {
         background: "white",

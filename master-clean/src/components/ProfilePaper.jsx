@@ -19,8 +19,12 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "45px",
     boxShadow: "0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)",
     height: "290px",
-    width: "100%",
-    padding: theme.spacing(2),
+    width: "289px",
+    marginBottom:"30px",
+    [theme.breakpoints.up('sm')]: {
+      width: "353px",
+      marginBottom:"0px",
+    },
   },
   imgBox: {
     width: "19%",
@@ -67,8 +71,8 @@ export default function ProfilePaper() {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={10}>
-        <Grid item xs={4}>
+      <Grid container>
+        <Grid item lg={4} md={6} xs={12}>
             <Paper elevation={3} className={classes.box}>
             <img className={classes.imgBox} src={box1} alt="order" />
             <Link className={classes.navLink} to="/MyOrders"> MY ORDERS</Link>
@@ -88,7 +92,7 @@ export default function ProfilePaper() {
             </div>
           </Paper>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item lg={4} md={6} xs={12}>
             <Paper elevation={3} className={classes.box}>
             <img className={classes.imgBox} src={mapbox2} alt="order" />
             <Link className={classes.navLink} to="/AddressBook"> Address Book</Link>
@@ -104,7 +108,7 @@ export default function ProfilePaper() {
             </div>
           </Paper>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item lg={4} md={6} xs={12}>
             <Paper elevation={3} className={classes.box}>
             <img className={classes.imgBox} src={settingbox3} alt="order" />
             <NavLink className={classes.navLink} to="/AccountSetting">Account Settings</NavLink>

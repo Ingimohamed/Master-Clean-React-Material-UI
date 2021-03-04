@@ -32,11 +32,45 @@ const useStyles = makeStyles((theme) => ({
   ul: {
     listStyle: "none",
     paddingLeft: "0",
-    float: "left",
+    float: "none",
     marginTop: "15px",
-    marginRight: "50px",
+    marginRight: "0px",
+    [theme.breakpoints.up('sm')]: {
+      marginRight: "0px",
+      float: "none",
+    },
+    [theme.breakpoints.up('md')]: {
+      marginRight: "50px",
+      float:"left",
+    },
   },
-  li: {marginBottom:"10px",display:"flex",marginBottom:"35px",},
+  li: {
+    marginBottom: "10px",
+    marginBottom: "35px",
+    marginLeft: "auto",
+    marginRight: "auto",
+    display:"block",
+      [theme.breakpoints.up('sm')]: {
+        marginLeft: "auto",
+        marginRight: "auto",
+        display:"block",
+    },
+    [theme.breakpoints.up('md')]: {
+      marginLeft: "0px",
+      marginRight: "0px",
+      display:"flex",
+    },
+    [theme.breakpoints.up('lg')]: {
+      marginLeft: "0px",
+      marginRight: "0px",
+      display:"flex",
+    },
+    [theme.breakpoints.up('xl')]: {
+      marginLeft: "0px",
+      marginRight: "0px",
+      display:"flex",
+    },
+  },
   iconUser: {
     width: "50px",
     height: "50px",
@@ -47,15 +81,56 @@ const useStyles = makeStyles((theme) => ({
   iconText: {
     fontSize: "18px",
     fontWeight: "400",
-    textAlign: "left",
+    textAlign: "center",
     display: "block",
     marginTop: "auto",
-    marginBottom:"auto",
+    marginBottom: "auto",
+    color: "white",
+      [theme.breakpoints.up('sm')]: {
+        textAlign:"center",
+    },
+    [theme.breakpoints.up('md')]: {
+      textAlign:"left",
+    },
+    [theme.breakpoints.up('lg')]: {
+      textAlign:"left",
+    },
+    [theme.breakpoints.up('xl')]: {
+      textAlign:"left",
+    },
+    
   },
   ulServices: {
+    textAlign: "center",
     listStyle: "none",
-    textAlign: "left",
-   paddingLeft:"0px",
+    paddingLeft: "0px",
+    [theme.breakpoints.up('sm')]: {
+      textAlign:"center",
+    },
+    [theme.breakpoints.up('md')]: {
+      textAlign: "left",
+    },
+    [theme.breakpoints.up('lg')]: {
+      textAlign: "left",
+    },
+    [theme.breakpoints.up('xl')]: {
+      textAlign: "left",
+    },
+  },
+  footerTitles: {
+    textAlign: "center",
+    [theme.breakpoints.up('sm')]: {
+      textAlign:"center",
+    },
+    [theme.breakpoints.up('md')]: {
+      textAlign:"left",
+    },
+    [theme.breakpoints.up('lg')]: {
+      textAlign:"left",
+    },
+    [theme.breakpoints.up('xl')]: {
+      textAlign:"left",
+    },
   },
   liServices:{},
 }));
@@ -97,7 +172,7 @@ export default function StickyFooter() {
 
           <Grid item md={3} xs={12}>
             <div className={classes.paper}>
-              <Typography variant="h5" gutterBottom align="left">
+              <Typography variant="h5" gutterBottom className={classes.footerTitles}>
                   <strong>SERVICES</strong> 
               </Typography>
                 <ul className={classes.ulServices}>
@@ -115,7 +190,7 @@ export default function StickyFooter() {
 
           <Grid item md={4} xs={12}>
             <div className={classes.paper}>
-            <Typography variant="h5" gutterBottom align="left">
+            <Typography variant="h5" gutterBottom className={classes.footerTitles}>
                 <strong>ABOUT US</strong> 
               </Typography>
               <Typography className={classes.iconText}>

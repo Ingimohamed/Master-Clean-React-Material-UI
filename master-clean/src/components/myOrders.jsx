@@ -22,8 +22,16 @@ const useStyles = theme => ({
         boxShadow:"0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important",
     }, 
     container: {
-        marginTop: "3rem",
-        padding: "3rem 5rem",
+        marginTop: "0rem",
+        padding: "2rem 1.5rem",
+        [theme.breakpoints.up('sm')]: {
+            marginTop: "3rem",
+            padding: "0rem 1.5rem",
+        },
+        [theme.breakpoints.up('md')]: {
+            marginTop: "3rem",
+            padding: "3rem 5rem",
+        },
     },
     orderTitlesText: {
         fontSize: "20px",
@@ -60,11 +68,17 @@ const useStyles = theme => ({
         margin:"auto",
     },
     infoTitles: {
-        fontSize: "1.25rem",
+        fontSize: "1rem",
         fontFamily: "'Poppins', sans-serif", 
         color: "#00527D",
         fontWeight: "700",
-        textAlign:"left",
+        textAlign: "left",
+        [theme.breakpoints.up('sm')]: {
+            fontSize: "1rem",
+        },
+        [theme.breakpoints.up('md')]: {
+            fontSize: "1.25rem",
+        },
     },
     infoAddress: {
         fontSize: "1rem",
@@ -121,58 +135,58 @@ class MyOrders extends Component {
         return ( 
             <Container className={classes.container}>
                 <Grid container className={classes.paddLeft}>
-                    <Grid item xs={4}>
+                    <Grid item sm={4} xs={12}>
                         <Typography align="left" className={classes.orderTitlesText}>Order history</Typography>
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item sm={4} xs={12}>
                         <Typography align="center" className={classes.orderTitlesText}>Omar Khaled</Typography>
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item sm={4} xs={12}>
                         <Button className={classes.backToProfileBtn} href="/profile">Back to dashboard</Button>
                     </Grid>
                 </Grid>
                 <div className={classes.itemCard}>
                     <Grid container className={classes.orderNoRow}>
-                        <Grid item xs={6}>
+                        <Grid item sm={6} xs={12}>
                              <Typography className={classes.orderNo} align="left">Order No : EG79927065</Typography>
                         </Grid>
-                        <Grid item xs={6}>
+                        <Grid item sm={6} xs={12}>
                              <Typography className={classes.orderNo} align="right">10 Sep 2019</Typography>
                         </Grid>
                     </Grid>
                     <Divider className={classes.hr}/>
                     <Grid container className={classes.infoRow}>
-                        <Grid item xs={5}>
+                        <Grid item sm={5} xs={12}>
                             <Typography   className={classes.infoTitles}>Shipping Information1:</Typography>
                         </Grid>
-                        <Grid item xs={4}>
+                        <Grid item sm={4} xs={12}>
                             <Typography  className={classes.infoTitles}>Billing Information2:</Typography>
                         </Grid>
-                        <Grid item xs={3}>
+                        <Grid item sm={3} xs={12}>
                             <Typography  className={classes.infoTitles}>Payment Information3:</Typography>
                         </Grid>
 
-                        <Grid item xs={5}>
+                        <Grid item sm={5} xs={12}>
                             <Typography className={classes.infoAddress}>Nasr City, Cairo Governorate</Typography>
                         </Grid>
-                        <Grid item xs={4}>
+                        <Grid item sm={4} xs={12}>
                             <Typography className={classes.infoAddress}>Nasr City, Cairo Governorate</Typography>
                         </Grid>
-                        <Grid item xs={3}>
+                        <Grid item sm={3} xs={12}>
                             <Typography className={classes.infoAddress}>Cash</Typography>
                         </Grid>
 
-                        <Grid item xs={5}>
+                        <Grid item sm={5} xs={12}>
                             <Typography align="left">
                                 <a className={classes.infophone} href="tel:+201141987688">+201141987688 <img className={classes.telIcon} src={telIcon} alt="telicon"/></a>
                             </Typography>
                             </Grid>
-                        <Grid item xs={4}>
+                        <Grid item sm={4} xs={12}>
                             <Typography align="left">
                                 <a className={classes.infophone} href="tel:+201141987688">+201141987688 <img className={classes.telIcon} src={telIcon} alt="telicon"/></a>
                             </Typography>
                          </Grid>
-                        <Grid item xs={3}>
+                        <Grid item sm={3} xs={12}>
                             <Typography className={classes.infoAddress}>Grand total: 150.00 EGP</Typography>
                          </Grid>
                     </Grid>

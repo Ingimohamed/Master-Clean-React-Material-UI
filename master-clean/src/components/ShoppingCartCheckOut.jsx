@@ -47,16 +47,28 @@ const useStyles = theme => ({
     padding: "6px 25px",
     background: "white",
     color: "#00527D",
-    fontSize: "20px",
+    fontSize: "18px",
     borderRadius: "14px",
     outline: "none",
-    float:"right",
+    float: "right",
+    [theme.breakpoints.up('sm')]: {
+      fontSize: "20px",
+    },
   },
   columnOne: {
     padding:"15px 0px 0px 48px",
   },
   columnTwo: {
-    padding:"16px 79px",
+    padding: "34px 0px",
+    [theme.breakpoints.up('sm')]: {
+      padding: "22px 10px",
+    },
+    [theme.breakpoints.up('md')]: {
+      padding: "20px 22px",
+    },
+    [theme.breakpoints.up('lg')]: {
+      padding: "16px 79px",
+    },
   },
 });
   class ShoppingCartCheckOut extends Component {
@@ -65,13 +77,13 @@ const useStyles = theme => ({
         const { classes } = this.props;
         return ( 
           <Grid container>
-            <Grid item xs={6} className={classes.columnOne}>
+            <Grid item sm={6} xs={12} className={classes.columnOne}>
               <Typography align="left">
                 <span className={classes.bold}>Estimated delivery time:</span>
                  2-3 working days after order.
               </Typography> 
             </Grid>
-            <Grid item xs={6} className={classes.columnTwo}>
+            <Grid item sm={6} xs={12} className={classes.columnTwo}>
           
               <Grid container>
                 <Grid item xs={6}>

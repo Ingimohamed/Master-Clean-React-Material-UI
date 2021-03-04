@@ -15,7 +15,23 @@ import UpdatePassword from './accountSettingsModel3';
 const useStyles = theme => ({
     container: {
         marginTop: "3rem",
-        padding: "3rem 5rem",
+        padding: "0rem 0rem",
+        [theme.breakpoints.up('sm')]: {
+            marginTop: "3rem",
+            padding: "1rem 2rem",
+        },
+        [theme.breakpoints.up('md')]: {
+            marginTop: "3rem",
+            padding: "1rem 2rem",
+        },
+        [theme.breakpoints.up('lg')]: {
+            marginTop: "3rem",
+            padding: "3rem 5rem", 
+        },
+        [theme.breakpoints.up('xl')]: {
+            marginTop: "3rem",
+            padding: "3rem 5rem", 
+          },
     },
     paddLeft: {
         paddingLeft: "1.6rem",

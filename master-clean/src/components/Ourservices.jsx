@@ -21,15 +21,30 @@ const useStyles = theme => ({
   typography: {
     textAlign: "center",
     color: "#00527D",
-    fontSize: "46px",
+    fontSize: "34px",
     fontWeight: "600",
-    padding: "3rem 0",
+    padding: "0rem 0",
+    [theme.breakpoints.up('sm')]: {
+      fontSize: "46px",
+    },
   },
   ThemeProvider: {
     background: "white",
   },
   img: {
     width:"65%",
+  },
+  subtitle: {
+    fontSize: "1rem",
+    padding: "0rem 0rem 3rem 0rem",
+    fontWeight: "600",
+    color: "#00527D",
+  },
+  column: {
+    marginBottom: "20px",
+    [theme.breakpoints.up('sm')]: {
+      marginBottom:"0",
+    },
   },
 });
 
@@ -45,10 +60,11 @@ class OurServices extends Component {
         <Grid container className={classes.container}>
           <Grid item xs={12}>
             <Typography className={classes.typography} variant="h3">
-              Our Services
+                Our Services
             </Typography>
+              <Typography className={classes.subtitle}>Stay clean and dress well</Typography>
           </Grid>
-          {this.state.images.map(image => <Grid key={image} item xs={4}>
+          {this.state.images.map(image => <Grid className={classes.column} key={image} item xs={12} sm={4}>
               <img className={classes.img} src={image} alt=""/>
               </Grid>)}
         </Grid>

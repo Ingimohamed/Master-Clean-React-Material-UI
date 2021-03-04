@@ -20,7 +20,10 @@ const useStyles = theme => ({
     marginBottom:"20px",
   },
   paddingContainer: {
-    padding:"3rem",
+    padding: "1.5rem",
+    [theme.breakpoints.up('sm')]: {
+      padding: "3rem",
+    },
   },
   contOrderBtn: {
     boxShadow: "2px 2px 4px lightgrey",

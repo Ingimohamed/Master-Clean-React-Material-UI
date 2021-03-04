@@ -26,15 +26,31 @@ const useStyles = makeStyles((theme) => ({
   },
   typographyh1: {
     color: "#00527D",
-    fontSize: "70px",
+    fontSize: "25px",
     fontWeight: "600",
     fontFamily: "'Poppins', sans-serif",
+    [theme.breakpoints.up('sm')]: {
+      fontSize:"45px",
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize:"50px",
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize:"70px",
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize:"70px",
+    },
   },
   typographyh3: {
     color: "#00527D",
-    fontSize: "30px",
+    fontSize: "19px",
     fontWeight: "600",
     fontFamily: "'Poppins', sans-serif",
+    [theme.breakpoints.up('sm')]: {
+      fontSize: "30px",
+      fontWeight: "600",
+    },
   },
   container: {
     padding: "18% 10%",
@@ -45,31 +61,21 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
+  rowBtns: {
+    maxWidth: "100%",
+    marginTop: "16px",
+    marginBottom: "16px",
+    marginLeft:"17%",
+    [theme.breakpoints.up('sm')]: {
+      maxWidth: "30%",
+      margin:"0px",
+    },
+  },
 }));
 
 export default function HomeHeader() {
   const classes = useStyles();
-
-  const [open, setOpen] = React.useState(false);
-
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-    };
-    
-    const [open2, setOpen2] = React.useState(false);
-    const handleOpen2 = () => {
-        setOpen2(true);
-      };
-    
-      const handleClose2 = () => {
-        setOpen2(false);
-      };
-
+ 
   return (
     <ThemeProvider theme={theme}>
       <Paper elevation={0} className={classes.root}>
@@ -90,8 +96,8 @@ export default function HomeHeader() {
             Sign up now and make your first order
           </Typography>
           <Grid container>
-            <Grid item><SignUpModal /></Grid> 
-            <Grid item> <LoginModal/></Grid>      
+            <Grid className={classes.rowBtns} item xs={12} sm={6} md={6} lg={6} xl={6}><SignUpModal /></Grid> 
+            <Grid className={classes.rowBtns} item xs={12} sm={6} md={6} lg={6} xl={6}> <LoginModal/></Grid>      
           </Grid>
         </Container>
       </Paper>

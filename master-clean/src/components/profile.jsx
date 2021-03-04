@@ -12,11 +12,17 @@ const useStyles =(theme) => ({
     fontFamily: "'Poppins', sans-serif",
     color: "#00527D",
     fontWeight: "700",
-    fontSize: "2.5rem",
-    paddingBottom:"3rem",
+    fontSize: "2rem",
+    paddingBottom: "3rem",
+    [theme.breakpoints.up('sm')]: {
+      fontSize:"2.5rem",
+    },
   },
   container: {
-    padding:"3rem 6rem 3rem 6rem",
+    padding: "3rem 1rem 3rem 1rem",
+    [theme.breakpoints.up('sm')]: {
+      padding: "3rem 6rem 3rem 6rem",
+    },
   },
 });
   class Profile extends Component {

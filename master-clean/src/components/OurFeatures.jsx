@@ -20,9 +20,12 @@ const useStyles = (theme) => ({
   typography: {
     textAlign: "center",
     color: "#00527D",
-    fontSize: "46px",
+    fontSize: "34px",
     fontWeight: "600",
     padding: "3rem 0",
+  },
+  [theme.breakpoints.up('sm')]: {
+    fontSize: "46px",
   },
 });
 
@@ -73,7 +76,7 @@ class OurFeatures extends Component {
             </Grid>
 
             {this.state.cards.map((card) => (
-              <Grid item xs={6}>
+              <Grid item xs={12} md={6}>
                 <OurFeaturesItem
                   key={card.id}
                   title={card.title}

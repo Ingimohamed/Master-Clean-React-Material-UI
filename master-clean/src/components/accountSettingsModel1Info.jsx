@@ -103,6 +103,12 @@ const useStyles = makeStyles((theme) => ({
   spanOfCloseIcon: {
     marginLeft:"auto",
   },
+  label: {
+    color: "#00527D",
+    fontFamily: "'Poppins', sans-serif",
+    fontWeight: "500",
+    fontSize:"20px",
+  }
 }));
 
 export default function UpdateAccountInfoContent() {
@@ -122,21 +128,21 @@ export default function UpdateAccountInfoContent() {
 <form className={classes.padForm}>
   <Grid container className="form-group row">
     <Grid item xs={12}>
-      <label htmlFor="">Full Name</label>
+      <label className={classes.label} htmlFor="">Full Name</label>
        <input className={classes.formControl} type="text"/>
     </Grid>
   </Grid>
             
     <Grid container className="form-group row">
     <Grid item xs={12}>
-      <label htmlFor="">Last Name</label>
+      <label className={classes.label} htmlFor="">Last Name</label>
        <input className={classes.formControl} type="text"/>
     </Grid>
   </Grid>
             
     <Grid container className="form-group row">
     <Grid item xs={12}>
-      <label htmlFor="">Gender</label>
+      <label className={classes.label} htmlFor="">Gender</label>
        <input className={classes.formControl} type="text"/>
     </Grid>
   </Grid>

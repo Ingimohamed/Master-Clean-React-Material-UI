@@ -13,8 +13,26 @@ const useStyles = theme => ({
   root: {
     paddingBottom: "3rem",
     paddingTop: "3rem",
-    paddingLeft: "5rem",
-    paddingRight:"5rem",
+    paddingLeft: "2rem",
+    paddingRight: "2rem",
+    [theme.breakpoints.up('sm')]: {
+      paddingBottom: "3rem",
+      paddingTop: "3rem",
+      paddingLeft: "3rem",
+      paddingRight: "3rem",
+    },
+    [theme.breakpoints.up('md')]: {
+      paddingBottom: "3rem",
+      paddingTop: "3rem",
+      paddingLeft: "4rem",
+      paddingRight: "4rem",
+    },
+    [theme.breakpoints.up('lg')]: {
+      paddingBottom: "3rem",
+      paddingTop: "3rem",
+      paddingLeft: "5rem",
+      paddingRight: "5rem",
+    },
   },
   paper: {
     textAlign: 'center',
@@ -61,10 +79,12 @@ const useStyles = theme => ({
     fontWeight: "600",
     color: "#00527D",
     textAlign: "center",
-    paddingBottom: "1.5rem",
     fontFamily: "Poppins, sans-serif",
     fontSize: "2.5rem",
-    marginBottom:"20px",
+    [theme.breakpoints.up('sm')]: {
+      marginBottom: "20px",
+      paddingBottom: "1.5rem",
+    },
   },
   blue: {
     color: "#00527D",
@@ -92,7 +112,7 @@ class Contactus extends Component {
         <Typography className={classes.title} variant="h1" align="center">Contact Us</Typography>
         <Grid container  justify="center" className={classes.container} spacing={2}>
          
-            <Grid item xs={6} className={classes.firstColumn}>
+            <Grid item xs={12} sm={6} className={classes.firstColumn}>
               <Typography className={classes.blue}>We enjoy our work and doing what is necessary. You can reach us from the contact information below.</Typography>
         <div className={classes.paper}>
                 <ul className={classes.ul}>
@@ -130,7 +150,7 @@ class Contactus extends Component {
               </ul>
             </div>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={6}>
             <GoogleMap/>
           </Grid>
         </Grid>

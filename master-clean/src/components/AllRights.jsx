@@ -23,7 +23,10 @@ const useStyles = theme => ({
         fontSize: "15px",
         opacity: "38%",
         color:"#00527D",
-    },
+  },
+  container: {
+    padding:"0rem 1rem 1rem 1rem",
+  },
 });
 
 class AllRights extends Component {
@@ -31,7 +34,7 @@ class AllRights extends Component {
     render() {
         const { classes } = this.props;
     return (
-      <div>
+      <div className={classes.container}>
         <Typography className={classes.copyrightText}>Master clean © 2019 | All Rights Reserved</Typography>
             <Divider className={classes.hr}/>
         <Typography className={classes.mailText}>logged in as : Omar.khalid@gmail.com</Typography>

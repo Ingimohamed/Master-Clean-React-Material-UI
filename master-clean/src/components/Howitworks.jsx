@@ -8,6 +8,7 @@ import {
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
+import HowitworksImages from './HowitworksImages';
 import howitworks1 from '../images/howitworks1.png';
 import howitworks2 from '../images/howitworks2.png';
 import howitworks3 from '../images/howitworks3.png';
@@ -21,21 +22,55 @@ const useStyles = theme => ({
   typography: {
     textAlign: "center",
     color: "#00527D",
-    fontSize: "46px",
+    fontSize: "34px",
     fontWeight: "600",
     padding: "0 0 3rem 0",
+    [theme.breakpoints.up('sm')]: {
+      fontSize: "46px",
+    },
   },
   grid: {
     maxWidth: "22%",
   },
   img: {
-    width: "82%",
+    width: "42%",
+    [theme.breakpoints.up('md')]: {
+      width: "82%",
+    },
+    [theme.breakpoints.up('sm')]: {
+      width: "90%",
+    },
   },
 });
 
 class Howitworks extends Component {
   state = {
-    images: [howitworks1, howitworks2, howitworks3, howitworks4]
+    works: [
+      {
+        id: 1,
+        titleh4: "Place an order",
+        titleP:"Place an order using our website its simple and easy.",
+        images: howitworks1,
+      },
+      {
+        id: 2,
+        titleh4: "We pick it",
+        titleP:"Just let’s know your location.",
+        images: howitworks2,
+      },
+      {
+        id: 3,
+        titleh4: "We clean it",
+        titleP:"We guarantee you’ll be satisfied - we put a quality on all items.",
+        images: howitworks3,
+      },
+      {
+        id: 4,
+        titleh4: "We deliver it",
+        titleP:"We deliver your clean clothes back to you, anytime and anywhere.",
+        images: howitworks4,
+      },
+    ],
   };
   render() { 
     const { classes } = this.props;
@@ -51,9 +86,20 @@ class Howitworks extends Component {
             </Typography>
           </Grid>
            
-          {this.state.images.map(image => <Grid key={image} item xs={3}>
-              <img className={classes.img} src={image} alt=""/>
-              </Grid>)}
+          {/* {this.state.images.map(image => <Grid key={image} item xs={12} sm={6} md={3}>
+            <img className={classes.img} src={image} alt="" />
+          </Grid>)} */}
+            
+          {this.state.works.map((work) => (  
+                <HowitworksImages
+                  key={work.id}
+                titleh4={work.titleh4}
+                titleP={work.titleP}
+                  images={work.images}
+                />
+            ))}
+            
+            
         </Grid>
       </Container>
     </ThemeProvider>

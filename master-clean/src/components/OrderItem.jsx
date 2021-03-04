@@ -28,11 +28,26 @@ const useStyles = (theme) => ({
     borderRadius: "15px",
     marginTop: "-76px",
     paddingTop: "56px",
-    marginLeft: "23px",
     width: "183px",
+    display: "block",
+    marginLeft: "auto",
+    marginRight:"auto",
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: "23px",
+      marginRight:"0px",
+    },
+
   },
   image: {
     width: "198px",
+    display: "block",
+    marginLeft: "auto",
+    marginRight:"auto",
+    [theme.breakpoints.up('sm')]: {
+      display: "block",
+      marginLeft: "0px",
+      marginRight:"0px",
+    },
   },
   accordion: {
     backgroundColor: "transparent",

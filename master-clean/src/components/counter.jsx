@@ -80,13 +80,13 @@ class Counter extends Component {
           </Grid>
         </Grid>
         <Grid container>
-          <Grid item xs={3}>
+          <Grid item sm={3} xs={12}>
             <Typography className={classes.itemTitles}>ITEM</Typography>
                  <Grid container>
                     <Grid item className={classes.center}> <img src={item1} alt="item"/></Grid>
                   </Grid>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item sm={3} xs={12}>
             <Typography className={classes.itemTitles}>DESCRIPTION</Typography>
             <Grid container>
               <Grid item className={classes.center}>
@@ -94,10 +94,10 @@ class Counter extends Component {
                     </Grid>
                   </Grid>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item sm={3} xs={12}>
             <Typography className={classes.itemTitles}>QUANTITY</Typography> 
                 <Grid container>
-                <Grid item xs={4}>
+                <Grid item sm={4}>
                   <IconButton
                         onClick={() => this.props.onDecrement(this.props.counter)}
                         className={classes.btnOfArrows}
@@ -106,8 +106,8 @@ class Counter extends Component {
                    <ArrowBackIosOutlinedIcon className={classes.Arrows} />
                       </IconButton>
                 </Grid>
-                <Grid item xs={4} className={classes.centerVertical}><span className={this.getBadgeClasses()}>{this.formatvalue()}</span></Grid>
-                <Grid item xs={4}>
+                <Grid item sm={4} className={classes.centerVertical}><span className={this.getBadgeClasses()}>{this.formatvalue()}</span></Grid>
+                <Grid item sm={4}>
                       <IconButton
                       onClick={() => this.props.onIncrement(this.props.counter)}
                       className={classes.btnOfArrows}
@@ -118,7 +118,7 @@ class Counter extends Component {
                 </Grid>
             
             </Grid>
-            <Grid item xs={3}>
+            <Grid item sm={3} xs={12}>
                 <Typography className={classes.price}>PRICE</Typography>
                   <Grid container>
               <Grid item className={classes.center}>

@@ -103,6 +103,12 @@ const useStyles = makeStyles((theme) => ({
   spanOfCloseIcon: {
     marginLeft:"auto",
   },
+  label: {
+    color: "#00527D",
+    fontFamily: "'Poppins', sans-serif",
+    fontWeight: "500",
+    fontSize:"20px",
+  }
 }));
 
 export default function UpdatePasswordContent() {
@@ -113,15 +119,30 @@ export default function UpdatePasswordContent() {
   <div className={classes.paper}>
     <div className={classes.modalContent}>
       <div className={classes.modalHeader}>
-        <h5 className={classes.modalTitle}>UPDATE PHONE NUMBER</h5>
+        <h5 className={classes.modalTitle}>UPDATE PASSWORD</h5>
         <span aria-hidden="true" className={classes.spanOfCloseIcon}>
               <img className="closeModal-icon" src={closeModal} alt="close"/>
           </span>
         </div> 
       <div className="modal-body margin-body">
-<form className={classes.padForm}>
+      <form className={classes.padForm}>
   <Grid container className="form-group row">
     <Grid item xs={12}>
+      <label className={classes.label} htmlFor="">Old Password</label>
+       <input className={classes.formControl} type="password"/>
+    </Grid>
+  </Grid>
+            
+    <Grid container className="form-group row">
+    <Grid item xs={12}>
+      <label className={classes.label} htmlFor="">New Password</label>
+       <input className={classes.formControl} type="password"/>
+    </Grid>
+  </Grid>
+            
+    <Grid container className="form-group row">
+    <Grid item xs={12}>
+      <label className={classes.label} htmlFor="">Confirm new password</label>
        <input className={classes.formControl} type="text"/>
     </Grid>
   </Grid>
