@@ -34,28 +34,77 @@ const useStyles = theme => ({
           },
     },
     paddLeft: {
-        paddingLeft: "1.6rem",
-        margin:"2rem 0",
+        paddingLeft: "1rem",
+        paddingRight:"1rem",
+        margin: "2rem 0",
+        [theme.breakpoints.up('sm')]: {
+            paddingLeft: "1.6rem",
+            paddingRight:"0rem",
+            margin: "2rem 0",
+        },
     },
-    orderTitlesText: {
+
+    orderTitlesTextLeft: {
         fontSize: "20px",
         fontFamily: "'Poppins', sans-serif", 
         color: "#00527D",
-        fontWeight:"700",
+        fontWeight: "700",
+        textAlign: "center",
+        [theme.breakpoints.up('sm')]: {
+            textAlign: "left",
+        },
+    },
+    orderTitlesTextCenter: {
+        fontSize: "20px",
+        fontFamily: "'Poppins', sans-serif", 
+        color: "#00527D",
+        fontWeight: "700",
+        textAlign: "right",
+        [theme.breakpoints.up('sm')]: {
+            textAlign: "right",
+        },
+        [theme.breakpoints.up('md')]: {
+            textAlign: "center",
+        },
     },
     backToProfileBtn: {
         boxShadow: "2px 2px 4px lightgrey",
-        float: "right",
+        float: "none",
         padding: "6px 25px",
         background: "white",
         color: "#00527D",
         fontSize: "20px",
         borderRadius: "14px",
         outline: "none",
-        textTransform:"none",
+        textTransform: "none",
+        marginTop:"10px",
+        [theme.breakpoints.up('sm')]: {
+            float: "right",
+            marginTop:"10px",
+        },
+        [theme.breakpoints.up('md')]: {
+            float: "right",
+            marginTop:"0px",
+        },
     },
-    firstCol:{padding:"0px 21px 0px 34px",},
-    secCol: { padding: "0px 14px 0px 23px", },
+    firstCol: {
+        padding: "0px 21px 0px 21px",
+        [theme.breakpoints.up('sm')]: {
+            padding: "0px 0px 0px 0px",
+        },
+        [theme.breakpoints.up('md')]: {
+            padding: "0px 21px 0px 34px",
+        },
+    },
+    secCol: {
+        padding: "0px 21px 0px 21px",
+        [theme.breakpoints.up('sm')]: {
+            padding: "0px 0px 0px 17px",
+        },
+        [theme.breakpoints.up('md')]: {
+            padding: "0px 14px 0px 23px",
+        },
+    },
     updateInfoBox: {
         width: "100%",
         border: "1px solid #CAE7F1",
@@ -115,18 +164,18 @@ class AccountSetting extends Component {
             <Container className={classes.container}>
                 <Grid container className={classes.paddLeft}>
                     <Grid item md={4} xs={6}>
-                        <Typography align="left" className={classes.orderTitlesText}>Account Settings</Typography>
+                        <Typography  className={classes.orderTitlesTextLeft}>Account Settings</Typography>
                     </Grid>
                     <Grid item md={4} xs={6}>
-                        <Typography align="center" className={classes.orderTitlesText}>Omar Khaled</Typography>
+                        <Typography  className={classes.orderTitlesTextCenter}>Omar Khaled</Typography>
                     </Grid>
-                    <Grid item md={4} xs={10}>
+                    <Grid item md={4} sm={12} xs={11}>
                         <Button className={classes.backToProfileBtn} href="/profile">Back to dashboard</Button>
                     </Grid>
                 </Grid>
 
                 <Grid container>
-                    <Grid className={classes.firstCol} item md={6} xs={12}>
+                    <Grid className={classes.firstCol} item md={6} sm={6} xs={12}>
                         <div className={classes.updateInfoBox}>
                             <Typography class={classes.titles}>
                                Account Information 
@@ -159,7 +208,7 @@ class AccountSetting extends Component {
                             </Typography>
                         </div>
                     </Grid>
-                    <Grid className={classes.secCol} item md={6} xs={12}>
+                    <Grid className={classes.secCol} item md={6} sm={6} xs={12}>
                         <div className={classes.updateInfoBox}>
                         <Typography class={classes.titles}>
                                 Phone Number

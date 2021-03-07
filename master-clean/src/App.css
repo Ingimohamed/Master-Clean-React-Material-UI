@@ -165,11 +165,12 @@ body{
 .addressTitle{
   font-weight: 700!important;
   margin-bottom: 1.5rem!important;
-  font-family: "Poppins", sans-serif;
-  color: #00527D;
-  font-size: 1.75rem;
-  text-align: left;
-  display: block;
+  margin-top: 0.5rem!important;
+  font-family: "Poppins", sans-serif!important;
+  color: #00527D!important;
+  font-size: 1.75rem!important;
+  text-align: left!important;
+  display: block!important;
 }
 .selectFormControl{
   width:100%;

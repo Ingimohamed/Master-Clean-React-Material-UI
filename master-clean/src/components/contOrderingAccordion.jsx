@@ -31,6 +31,12 @@ const BootstrapInput = withStyles((theme) => ({
       marginTop: theme.spacing(3),
     },
   },
+  paddOne: {
+    paddingRight: "25px!important",
+  },
+  paddTwo: {
+    paddingRight: "18px!important",
+  },
   input: {
     borderRadius: 10,
     position: 'relative',
@@ -157,23 +163,23 @@ export default function CustomizedAccordions() {
         </AccordionSummary>
         <AccordionDetails>
           <Grid container className="mb-1">
-            <Grid item md={4}> 
+            <Grid item xs={4}> 
                <label className="col-form-label" htmlFor="">Email*</label>
             </Grid>
-            <Grid item md={8}>
+            <Grid item xs={8}>
                <input className="input" type="email"/>
             </Grid>
           </Grid>
           <Grid container className="mb-1">
-            <Grid item md={4}> 
+            <Grid item xs={4}> 
                <label className="col-form-label" htmlFor="">Password*</label>
             </Grid>
-            <Grid item md={8}>
+            <Grid item xs={8}>
                <input className="input" type="password"/>
             </Grid>
      </Grid>
     <Grid container className="mb-1">
-        <Grid item md={10}>
+        <Grid item xs={10}>
             <Button className="signInBtn">SIGN IN</Button>
         </Grid>
     </Grid>
@@ -186,60 +192,61 @@ export default function CustomizedAccordions() {
         <AccordionDetails>
           <Typography className="addressTitle">New Shipping address</Typography>
           <Grid container className="mb-3">
-            <Grid item md={12}>
+            <Grid item xs={12}>
               <GoogleMap />
             </Grid>
           </Grid>
 
           <Grid container className="mb-1">
-            <Grid item md={4}> 
+            <Grid item xs={4}> 
                <label className="col-form-label" htmlFor="">Full Name*</label>
             </Grid>
-            <Grid item md={8}>
+            <Grid item xs={8}>
                <input className="input" type="text"/>
             </Grid>
           </Grid>
 
           <Grid container className="mb-1">
-            <Grid item md={4}> 
+            <Grid item xs={4}> 
                <label className="col-form-label" htmlFor="">Contact Number*</label>
             </Grid>
-            <Grid item md={8}>
+            <Grid item xs={8}>
                <input className="input" type="number"/>
             </Grid>
           </Grid>
 
           <Grid container className="mb-1">
-            <Grid item md={4}> 
+            <Grid item xs={4}> 
                <label className="col-form-label" htmlFor="">city*</label>
             </Grid>
-            <Grid item md={8}>
+            <Grid item xs={8}>
                <input className="input" type="text"/>
             </Grid>
           </Grid>
 
           <Grid container className="mb-1">
-            <Grid item md={4}> 
+            <Grid item xs={4}> 
                <label className="col-form-label" htmlFor="">Address*</label>
             </Grid>
-            <Grid item md={8}>
+            <Grid item xs={8}>
                <input className="input" type="text"/>
             </Grid>
           </Grid>
 
           <Grid container className="mb-1 direction">
-            <Grid item xl={4} lg={4} md={5} className="paddOne"> 
+            <Grid item xl={4} lg={4} sm={4} xs={12} className={classes.paddOne}> 
               <label className="col-form-label textAlignLeft" htmlFor="">Street Name/Number*</label>
               <input className="input" type="text"/>
             </Grid>
-            <Grid item md={4} className="paddTwo">
+            <Grid item sm={4} xs={12} className={classes.paddTwo}>
             <label className="col-form-label textAlignLeft" htmlFor="">House Number*</label>
                <input className="input" type="text"/>
             </Grid>
+            <Grid item sm={4} xs={0}></Grid>
           </Grid>
 
           <Grid container className="mb-1">
-        <Grid item md={10}>
+        <Grid item xs={10}>
             <Button className="signInBtn">Proceed to checkout</Button>
         </Grid>
        </Grid>
@@ -257,26 +264,26 @@ export default function CustomizedAccordions() {
               <FormControlLabel value="credit" control={<Radio />} label="Credit/Debit card payment (We accept Visa and mastercard)" />
               
               <Grid container className="mb-1">
-            <Grid item md={4}> 
+            <Grid item xs={4}> 
                <label className="col-form-label" htmlFor="">Card number*</label>
             </Grid>
-            <Grid item md={8}>
+            <Grid item xs={8}>
                <input className="input" type="number"/>
             </Grid>
               </Grid>
               <Grid container className="mb-1">
-            <Grid item md={4}> 
+            <Grid item xs={4}> 
                <label className="col-form-label" htmlFor="">Name on card*</label>
             </Grid>
-            <Grid item md={8}>
+            <Grid item xs={8}>
                <input className="input" type="text"/>
             </Grid>
               </Grid>
               <Grid container className="mb-1">
-            <Grid item md={4}> 
+            <Grid item xs={4}> 
                <label className="col-form-label" htmlFor="">Expiration Date*</label>
             </Grid>
-            <Grid item md={4}>
+            <Grid item xs={4}>
                
       <FormControl className="selectFormControl pr">
         <NativeSelect

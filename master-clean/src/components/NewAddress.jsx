@@ -18,12 +18,21 @@ const useStyles = theme => ({
         background:"white",
     },
     root: {
-        maxWidth: 345,
+        maxWidth: "fit-content",
         border: "1px solid #CAE7F1",
         borderRadius: "31px",
         boxShadow: "0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important",
         position: "relative",
-        background:"white",
+        background: "white",
+        [theme.breakpoints.up('sm')]: {
+            maxWidth: 345,
+        },
+        [theme.breakpoints.up('md')]: {
+            maxWidth: 269,
+        },
+        [theme.breakpoints.up('lg')]: {
+            maxWidth: 345,
+        },
       },
       media: {
           height: 60,
