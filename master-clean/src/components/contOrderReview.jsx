@@ -14,7 +14,10 @@ import orderpullover from '../images/order-pullover.png';
 
 const useStyles = makeStyles((theme) => ({
     accordion: {
-    margin: "15px 0",
+    marginTop: "15px!important",
+    [theme.breakpoints.up('sm')]: {
+      marginTop: "0px!important",
+      },
     borderRadius: "20px",
     boxShadow:"0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important",
   },

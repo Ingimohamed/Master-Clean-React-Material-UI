@@ -31,12 +31,7 @@ const BootstrapInput = withStyles((theme) => ({
       marginTop: theme.spacing(3),
     },
   },
-  paddOne: {
-    paddingRight: "25px!important",
-  },
-  paddTwo: {
-    paddingRight: "18px!important",
-  },
+  
   input: {
     borderRadius: 10,
     position: 'relative',
@@ -67,6 +62,18 @@ const BootstrapInput = withStyles((theme) => ({
 }))(InputBase);
 
 const useStyles = makeStyles((theme) => ({
+  paddOne: {
+    paddingLeft: "0px!important",
+    [theme.breakpoints.up('sm')]:{
+      paddingLeft: "10px!important",
+    }
+  },
+  paddTwo: {
+    paddingRight: "0px!important",
+    [theme.breakpoints.up('sm')]:{
+      paddingRight: "10px!important",
+    }
+  },
   accordion: {
     margin: "15px 0",
     borderRadius: "20px",
@@ -246,7 +253,7 @@ export default function CustomizedAccordions() {
           </Grid>
 
           <Grid container className="mb-1">
-        <Grid item xs={10}>
+        <Grid item sm={10} xs={12}>
             <Button className="signInBtn">Proceed to checkout</Button>
         </Grid>
        </Grid>
@@ -310,7 +317,7 @@ export default function CustomizedAccordions() {
                   </FormControl>
                   
                 </Grid>
-     <Grid item md={4}>
+     <Grid item xs={4}>
                   <FormControl className="selectFormControl pl">
         <NativeSelect
           id="demo-customized-select-native"
@@ -332,26 +339,26 @@ export default function CustomizedAccordions() {
             </Grid>
               </Grid>
               <Grid container className="mb-1">
-            <Grid item md={4}> 
+            <Grid item xs={4}> 
                <label className="col-form-label" htmlFor="">CCV*</label>
             </Grid>
-            <Grid item md={4}>
+            <Grid item xs={4}>
                <input className="input" type="text"/>
                 </Grid>
-              <Grid item md={4}>
+              <Grid item xs={4}>
               <img className="ccvImg" src={ccv} alt="credit card"/>
             </Grid>
               </Grid>          
               <FormControlLabel value="cash" control={<Radio />} label="Cash on delivery" />
               
               <Grid container>
-                <Grid item md={6} xs={12}>
+                <Grid item md={6} sm={6} xs={12}>
                   <div className="custom-file">
                       <input type="file" className="custom-file-input" id="customFileLangHTML"/>
                       <label className="custom-file-label" htmlFor="customFileLangHTML" data-browse="VALIDATE">Enter coupon code here</label>
                     </div>
                 </Grid>
-                <Grid item md={6} xs={12}>
+                <Grid item md={6} sm={6} xs={12}>
                   <Button className="paynowBtn">Pay now</Button>
                 </Grid>
                 </Grid>

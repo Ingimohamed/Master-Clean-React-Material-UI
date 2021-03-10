@@ -4,12 +4,14 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import Button from '@material-ui/core/Button';
+import AddNewAddress from './AddNewAddressModelContent';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    overflow:"auto",
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
@@ -30,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function AddNewAddressModel() {
+export default function AddNewAddressModel() { 
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -45,7 +47,7 @@ export default function AddNewAddressModel() {
   return (
     <div>
       <Button className={classes.backToProfileBtn} type="button" onClick={handleOpen}>
-      Add new address
+        Add new address
       </Button>
       <Modal
         aria-labelledby="transition-modal-title"
@@ -60,10 +62,7 @@ export default function AddNewAddressModel() {
         }}
       >
         <Fade in={open}>
-          <div className={classes.paper}>
-            <h2 id="transition-modal-title">Transition modal</h2>
-            <p id="transition-modal-description">react-transition-group animates me.</p>
-          </div>
+          <AddNewAddress />
         </Fade>
       </Modal>
     </div>

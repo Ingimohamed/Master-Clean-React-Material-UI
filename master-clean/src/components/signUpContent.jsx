@@ -7,7 +7,17 @@ import { withStyles } from "@material-ui/core/styles";
 const useStyles = (theme) => ({
     row: {
        margin:"20px 0px 20px 0px",
-   },
+    },
+    mobilMargin: {
+        marginBottom: "16px",
+        [theme.breakpoints.up('sm')]: {
+            marginBottom: "0px",
+            paddingRight:"10px",
+        },
+    },
+    Padd: {
+        paddingLeft:"10px",
+    },
 });
 
 class SignUpContent extends Component {
@@ -20,7 +30,6 @@ class SignUpContent extends Component {
                 
      <div className="modal-header text-center">
             <img className="signup-logo" src={NavLogoModal} alt="logo"/>
-           
       </div>
                         
      <div className="modal-middle mx-3">
@@ -30,11 +39,11 @@ class SignUpContent extends Component {
      </div>
 <div className="modal-body mx-3">
     <Grid container  className={classes.row}>
-        <Grid item xs={6}>
+        <Grid item sm={6}xs={12} className={classes.mobilMargin}>
             <label for="inputDisabledEx2" className="label">First name</label>
             <input type="text" id="inputDisabledEx2" className="form-control"/>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item sm={6}xs={12} className={classes.Padd}>
             <label for="inputDisabledEx2" className="label">Last name</label>
             <input type="text" id="inputDisabledEx2" className="form-control"/>
         </Grid>
@@ -49,11 +58,11 @@ class SignUpContent extends Component {
 </Grid>
       
 <Grid container className={classes.row}>
-    <Grid item xs={6}> 
+    <Grid item sm={6} xs={12} className={classes.mobilMargin}> 
         <label for="inputDisabledEx2" className="label">password</label>
         <input type="password" id="inputDisabledEx2" className="form-control"/>
     </Grid>
-    <Grid item xs={6} >
+    <Grid item sm={6} xs={12} className={classes.Padd}>
         <label for="inputDisabledEx2" className="label">Confirm password</label>
         <input type="password" id="inputDisabledEx2" className="form-control"/>
     </Grid>
