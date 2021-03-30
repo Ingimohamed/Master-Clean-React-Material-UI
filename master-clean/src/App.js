@@ -12,6 +12,7 @@ import MyOrder from './components/myOrders';
 import AddressBook from './components/addressBook';
 import AccountSetting from './components/accountSettings';
 import ContOrdering from './components/contOrdering';
+import Admin from './components/Admin';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/AccountSetting" component={AccountSetting} />
 
           <Route path="/ContOrdering" component={ContOrdering} />
+          <Route path="/Admin" component={Admin} />
           
           <Route path="/" component={ Home } />
         </Switch>

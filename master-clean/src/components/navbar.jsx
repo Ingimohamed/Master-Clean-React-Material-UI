@@ -198,7 +198,6 @@ export default function PrimarySearchAppBar() {
            
             {/* <IconButton aria-label="show 17 new notifications" color="inherit">
                           <Typography>
-               
                 <Link className={classes.navLink}  to="/"> Home </Link>
                      </Typography>
              </IconButton> */}
