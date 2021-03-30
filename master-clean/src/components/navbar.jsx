@@ -143,9 +143,9 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
+      {/* <MenuItem>
         <Link className={classes.navLink}  to="/"> Home </Link>
-      </MenuItem>
+      </MenuItem> */}
       <MenuItem>
         <NavLink className={classes.navLink} to="/Order"> Order</NavLink>
       </MenuItem>
@@ -196,12 +196,12 @@ export default function PrimarySearchAppBar() {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
            
-            <IconButton aria-label="show 17 new notifications" color="inherit">
+            {/* <IconButton aria-label="show 17 new notifications" color="inherit">
                           <Typography>
                
                 <Link className={classes.navLink}  to="/"> Home </Link>
                      </Typography>
-             </IconButton>
+             </IconButton> */}
              <IconButton  aria-label="show 17 new notifications" color="inherit">
               <Typography>
                 <NavLink className={classes.navLink} to="/Order"> Order</NavLink>
