@@ -489,3 +489,11 @@ h4 span {
   width: 97%;
 }
 /* end/Account setting Modals (Three models) */
+
+/* start new signup and login modal */
+.MuiDialog-paperWidthSm-230,
+.MuiDialog-paperWidthSm-229{
+  width:917px!important;
+  max-width: none!important;
+}
+/* end new signup and login modal */
