@@ -1,5 +1,6 @@
-import React from "react";
-import {createMuiTheme,makeStyles,ThemeProvider} from "@material-ui/core/styles";
+import React, { Component } from "react";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import headerimg2 from "../images/headerimg2.png";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
@@ -10,10 +11,10 @@ import Grid from '@material-ui/core/Grid';
 const theme = createMuiTheme({
   status: {
     danger: "#00527D",
-  },
+  }, 
 });
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = theme => ({
   root: {
     background: `linear-gradient(rgba(255,225,255,0.5),rgba(255,255,255,0.5)), url(${headerimg2})`,
     width: "100%",
@@ -71,36 +72,45 @@ const useStyles = makeStyles((theme) => ({
       margin:"0px",
     },
   },
-}));
+});
 
-export default function HomeHeader() {
-  const classes = useStyles();
- 
+
+class HomeHeader extends Component {
+
+render(){
+  const { classes } = this.props;
   return (
-    <ThemeProvider theme={theme}>
-      <Paper elevation={0} className={classes.root}>
-        <Container className={classes.container}>
-          <Typography
-            className={classes.typographyh1}
-            variant="h1"
-            component="h2"
-            gutterBottom
-          >
-            We offer the best laundering experience
-          </Typography>
-          <Typography
-            className={classes.typographyh3}
-            variant="h3"
-            gutterBottom
-          >
-            Sign up now and make your first order
-          </Typography>
-          <Grid container>
-            <Grid className={classes.rowBtns} item xs={12} sm={6} md={6} lg={6} xl={6}><SignUpModal /></Grid> 
-            <Grid className={classes.rowBtns} item xs={12} sm={6} md={6} lg={6} xl={6}> <LoginModal/></Grid>      
-          </Grid>
-        </Container>
-      </Paper>
-    </ThemeProvider>
-  );
+      <ThemeProvider theme={theme}>
+        <Paper elevation={0} className={classes.root}>
+          <Container className={classes.container}>
+            <Typography
+              className={classes.typographyh1}
+              variant="h1"
+              component="h2"
+              gutterBottom
+            >
+              We offer the best laundering experience
+            </Typography>
+            <Typography
+              className={classes.typographyh3}
+              variant="h3"
+              gutterBottom
+            >
+              Sign up now and make your first order
+            </Typography>
+            <Grid container>
+            <Grid className={classes.rowBtns} item xs={12} sm={6} md={6} lg={6} xl={6}>
+              <SignUpModal />
+            </Grid>
+            <Grid className={classes.rowBtns} item xs={12} sm={6} md={6} lg={6} xl={6}>
+              <LoginModal />
+            </Grid>
+            </Grid>
+          </Container>
+        </Paper>
+      </ThemeProvider>
+    );
 }
+}
+  
+  export default withStyles(useStyles) (HomeHeader);

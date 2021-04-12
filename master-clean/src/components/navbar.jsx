@@ -7,14 +7,10 @@ import Typography from '@material-ui/core/Typography';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
-import MailIcon from '@material-ui/icons/Mail';
-import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import profile from "../images/profile.png";
 import shopping from "../images/shopping.png";
 import NavLogo from "../images/NavLogo.png";
-import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import { Link, NavLink } from "react-router-dom";
 
 
@@ -191,8 +187,6 @@ export default function PrimarySearchAppBar() {
         <Link className={classes.linkStyle}  to="/"> 
             <img src={NavLogo} alt="Kitty Katty!" className={classes.NavLogo} />
          </Link>
-       
-                 
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
            
@@ -203,8 +197,7 @@ export default function PrimarySearchAppBar() {
              </IconButton> */}
              <IconButton  aria-label="show 17 new notifications" color="inherit">
               <Typography>
-                <NavLink className={classes.navLink} to="/Order"> Order</NavLink>
-                             
+                <NavLink className={classes.navLink} to="/Order"> Order</NavLink>           
                      </Typography>
            </IconButton>
            <IconButton aria-label="show 17 new notifications" color="inherit">
@@ -220,9 +213,7 @@ export default function PrimarySearchAppBar() {
               <NavLink to="/Profile">
                 <img className={classes.navIcon} src={profile} alt="profile" />
               </NavLink>
-              
              </IconButton  >
-                      
             <IconButton edge="end"
               aria-label="account of current user"
               className={classes.iconButton}
@@ -232,10 +223,7 @@ export default function PrimarySearchAppBar() {
                    <img className={classes.navIcon} src={shopping} alt="shopping basket"/>
                 </Badge>
              </NavLink>
-               
-                         
          </IconButton>      
-                      
           </div>
           <div className={classes.sectionMobile}>
             <IconButton
