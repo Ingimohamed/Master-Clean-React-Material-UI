@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const Input = ({ name, label, value, onChange, type, error }) => {
+const Input = ({ name, label, error, ...rest }) => {
     const classes = useStyles();
     return (
         <FormGroup>
@@ -20,9 +20,7 @@ const Input = ({ name, label, value, onChange, type, error }) => {
           { label }
         </label>
         <input
-          value={value}
-          onChange={onChange}
-          type={type}
+          {...rest}
           id={name}
           name={name}
           className="form-control"
