@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Joi from "joi-browser";
 import Input from './input';
+import Label from './label';
 import Button from "@material-ui/core/Button";
 
 
@@ -49,21 +50,28 @@ class Form extends Component {
         this.setState({ data, errors });
     };
 
-    renderButton(label) {
-        return  <Button disabled={this.validate()}  type="submit" className="signupBtn-modal">
+    renderButton(label, className) {
+        return  <Button disabled={this.validate()}  type="submit" className={className}>
         {label}
       </Button>
     };
     
-    renderInput(name, label, type="text") {
+    renderLabel(name, label,className) {
+      return (<Label
+          name={name}
+          label={label}
+          className={className}
+      />);
+ }
+    renderInput(name, type="text", className) {
         const { data, errors } = this.state;
         return (<Input
             name={name}
             value={data[name]}
-            label={label}
             onChange={this.handleChange}
             error={errors[name]}
-            type={type}
+          type={type}
+          className={className}
         />);
    }
 }

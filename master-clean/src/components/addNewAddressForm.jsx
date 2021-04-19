@@ -1,13 +1,14 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import Joi from "joi-browser";
+import Form from './common/form';
+import { withStyles } from "@material-ui/core/styles";
 import Button from '@material-ui/core/Button';
 import closeModal from '../images/closeModal.png';
 import Typography from '@material-ui/core/Typography';
 import GoogleMap from './Googlemap';
 
-
-const useStyles = makeStyles((theme) => ({
+const useStyles = (theme) => ({
   paddOne: {
     paddingLeft: "0px!important",
     [theme.breakpoints.up('sm')]:{
@@ -103,7 +104,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "6px 12px",
     backgroundColor: "white",
     color: "#00527D",
-    fontSize: "17px",
+    fontSize: "20px",
     fontWeight:"700",
     borderRadius: "14px",
     outline: "none",
@@ -211,97 +212,124 @@ const useStyles = makeStyles((theme) => ({
     width: "97%",
     outline:"none",
   },
-  padding: {
+  padding: { 
     padding:"10px 0px",
   },
-}));
+  ".label": {
+    display: "none!important",
+  },
+});
 
-export default function AddNewAddress() {
-  const classes = useStyles();
+class AddNewAddressForm extends Form {
+  state = {
+    data: { fullname:"",contactnumber:"",city:"",address:"",housenumber:"", streetname:"" },
+    errors:{},
+  };
 
-  return (
+  schema = {
+    fullname: Joi.string().required().label('Last Name'),
+    contactnumber: Joi.number().required().label('Contact Number'),
+    city:Joi.string().required().label('Contact Number'),
+    address: Joi.string().required().label('Address'),
+    housenumber:Joi.string().required().label('House Number'),
+    streetname: Joi.string().required().label('Street Name'),
+};
+
+  doSubmit = () => {
+    //call the server
+    console.log("Submitted");
+  }
+
+  render() {
+    const { classes } = this.props;
+    return (
    
-  <div  className={classes.paper}>
-    <div className={classes.modalContent}>
-        <div className={classes.modalHeader}>
-        <Typography className="addressTitle">New Shipping address</Typography>
-        <span aria-hidden="true" className={classes.spanOfCloseIcon}>
-              <img className={classes.closeModelBtn} src={closeModal} alt="close"/>
-          </span>
-        </div> 
-      <div className="modal-body margin-body">
-          <Grid container className="mb-3">
-            <Grid item xs={12}>
-              <GoogleMap />
+      <div  className={classes.paper}>
+        <div className={classes.modalContent}>
+            <div className={classes.modalHeader}>
+            <Typography className="addressTitle">New Shipping address</Typography>
+            <span aria-hidden="true" className={classes.spanOfCloseIcon}>
+                  <img className={classes.closeModelBtn} src={closeModal} alt="close"/>
+              </span>
+            </div> 
+          <div className="modal-body margin-body">
+            <form>
+              <Grid container className="mb-3">
+                <Grid item xs={12}>
+                  <GoogleMap />
+                </Grid>
+              </Grid>
+    
+              <Grid container className={classes.padding}>
+              <Grid item xs={6} className={classes.padRight}>
+                  <Button className={classes.btn3}>Home</Button>
+              </Grid>
+              <Grid item xs={6} className={classes.padLeft}>
+                  <Button  className={classes.btn4}>Work</Button>
+              </Grid>
+              </Grid>
+              
+              <Grid container className="mb-1">
+                <Grid item xs={4}> 
+                   <label className="col-form-label" htmlFor="fullname">Full Name*</label>
+                </Grid>
+                <Grid item xs={8}>
+                   {this.renderInput('fullname','','input')}
+                </Grid>
+              </Grid>
+    
+              <Grid container className="mb-1">
+                <Grid item xs={4}> 
+                   <label className="col-form-label" htmlFor="contactnumber">Contact Number*</label>
+                </Grid>
+                <Grid item xs={8}>
+                  {this.renderInput('contactnumber','number','input')}
+                </Grid>
+              </Grid>
+    
+              <Grid container className="mb-1">
+                <Grid item xs={4}> 
+                   <label className="col-form-label" htmlFor="city">city*</label>
+                </Grid>
+                <Grid item xs={8}>
+                  {this.renderInput('city','','input')}
+                </Grid>
+              </Grid>
+    
+              <Grid container className="mb-1">
+                <Grid item xs={4}> 
+                   <label className="col-form-label" htmlFor="address">Address*</label>
+                </Grid>
+                <Grid item xs={8}>
+                   {this.renderInput('address','','input')}
+                </Grid>
+              </Grid>
+    
+              <Grid container className="mb-1 direction">
+                <Grid item xl={4} lg={4} sm={4} xs={12} className={classes.paddOne}> 
+                  <label className="col-form-label textAlignLeft" htmlFor="streetname">Street Name/Number*</label>
+                    {this.renderInput('streetname','','input')}
+                </Grid>
+                <Grid item sm={4} xs={12} className={classes.paddTwo}>
+                <label className="col-form-label textAlignLeft" htmlFor="housenumber">House Number*</label>
+                  {this.renderInput('housenumber','','input')}
+                </Grid>
+                <Grid item sm={4} xs={0}></Grid>
+              </Grid>
+            
+            <Grid container>
+              <Grid item xs={6}>
+                  <Button type="button" className={classes.btn} data-dismiss="modal">Cancel</Button>
+              </Grid>
+              <Grid item xs={6}>
+                  {this.renderButton("Add new address","addNewAddressBtn")}
+              </Grid>
             </Grid>
-          </Grid>
-
-          <Grid container className={classes.padding}>
-          <Grid item xs={6} className={classes.padRight}>
-              <Button className={classes.btn3}>Home</Button>
-          </Grid>
-          <Grid item xs={6} className={classes.padLeft}>
-              <Button  className={classes.btn4}>Work</Button>
-          </Grid>
-          </Grid>
-          
-          <Grid container className="mb-1">
-            <Grid item xs={4}> 
-               <label className="col-form-label" htmlFor="">Full Name*</label>
-            </Grid>
-            <Grid item xs={8}>
-               <input className="input" type="text"/>
-            </Grid>
-          </Grid>
-
-          <Grid container className="mb-1">
-            <Grid item xs={4}> 
-               <label className="col-form-label" htmlFor="">Contact Number*</label>
-            </Grid>
-            <Grid item xs={8}>
-               <input className="input" type="number"/>
-            </Grid>
-          </Grid>
-
-          <Grid container className="mb-1">
-            <Grid item xs={4}> 
-               <label className="col-form-label" htmlFor="">city*</label>
-            </Grid>
-            <Grid item xs={8}>
-               <input className="input" type="text"/>
-            </Grid>
-          </Grid>
-
-          <Grid container className="mb-1">
-            <Grid item xs={4}> 
-               <label className="col-form-label" htmlFor="">Address*</label>
-            </Grid>
-            <Grid item xs={8}>
-               <input className="input" type="text"/>
-            </Grid>
-          </Grid>
-
-          <Grid container className="mb-1 direction">
-            <Grid item xl={4} lg={4} sm={4} xs={12} className={classes.paddOne}> 
-              <label className="col-form-label textAlignLeft" htmlFor="">Street Name/Number*</label>
-              <input className="input" type="text"/>
-            </Grid>
-            <Grid item sm={4} xs={12} className={classes.paddTwo}>
-            <label className="col-form-label textAlignLeft" htmlFor="">House Number*</label>
-               <input className="input" type="text"/>
-            </Grid>
-            <Grid item sm={4} xs={0}></Grid>
-          </Grid>
+            </form>
+            </div>
         </div>
-        <Grid container>
-          <Grid item xs={6}>
-              <Button type="button" className={classes.btn} data-dismiss="modal">Cancel</Button>
-          </Grid>
-          <Grid item xs={6}>
-              <Button  type="button" className={classes.btn2}>Add new address</Button>
-          </Grid>
-      </Grid>
-    </div>
-  </div>
-  );
+      </div>
+      );
+  }
 }
+export default withStyles(useStyles)(AddNewAddressForm);

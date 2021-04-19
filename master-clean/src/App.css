@@ -85,7 +85,7 @@ body{
 .MuiAccordion-root:before{
   background-color: transparent!important;
 }
-.col-form-label{
+label.col-form-label{
     padding-top: calc(.375rem + 1px);
     padding-bottom: calc(.375rem + 1px);
     margin-bottom: 0;
@@ -420,6 +420,7 @@ h4 span {
     color:#00527D!important;
     font-weight: bold!important;
     margin: 18px 16px 7px 16px!important;
+    text-align: left!important;
 }
 .form-control:focus{
   outline:none!important;
@@ -501,3 +502,23 @@ h4 span {
   max-width: none!important;
 }
 /* end new signup and login modal */
+
+.addNewAddressBtn{
+  box-shadow: 2px 2px 4px lightgrey!important;
+    border: 1px solid #C2E5F1!important;
+    background-color: white!important;
+    color: #00527D!important;
+    font-size: 20px!important;
+    font-weight:700!important;
+    border-radius: 14px!important;
+    outline: none!important;
+    text-transform: none!important;
+    margin: .375rem!important;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    display: inline-block!important;
+    text-align: center!important;
+    vertical-align: middle!important;
+    line-height: 1.5!important;
+    width: 98%!important;
+}

@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import NavLogoModal from '../images/NavLogoModal.png';
 import IconButton from '@material-ui/core/IconButton';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import SignUp from './signUp';
+import SignUpForm from './signUpForm';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -107,7 +107,7 @@ export default function SignUpModal() {
                    <div className="border-bottomm"></div>
                 </div>
                 <div className="modal-body mx-3">
-                    <SignUp/>                    
+                    <SignUpForm/>                    
                 </div>
            </div>
           </DialogContentText>
