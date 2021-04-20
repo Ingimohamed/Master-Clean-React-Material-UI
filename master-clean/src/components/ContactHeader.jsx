@@ -5,7 +5,6 @@ import {
   ThemeProvider,
 } from "@material-ui/core/styles";
 import contactheader from "../images/contactheader.png";
-import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 

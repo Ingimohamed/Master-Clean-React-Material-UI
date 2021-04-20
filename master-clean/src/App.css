@@ -522,3 +522,7 @@ h4 span {
     line-height: 1.5!important;
     width: 98%!important;
 }
+.addNewAddressBtn:disabled{
+  box-shadow:none!important;
+  
+}

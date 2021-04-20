@@ -1,30 +1,43 @@
-import React  from "react";
-import {
-  createMuiTheme,
-  makeStyles,
-  ThemeProvider,
-} from "@material-ui/core/styles";
+import React, { Component } from 'react';
+import { render } from "react-dom";
+import MapLocation from "./mapLocation";
 
 
-const useStyles = makeStyles((theme) => ({
-  widthHeight: {
-    width: "100%",
-    height:"inherit",
-  },
-}));
-const GoogleMap = () => {
-  const classes = useStyles();
-  return (
-    <div>
-      <div class="mapouter">
-        <div class="gmap_canvas">
-          <iframe className={classes.widthHeight} id="gmap_canvas" src="https://maps.google.com/maps?q=clean&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-          <a href="https://putlocker-is.org"></a>
-            <a href="https://www.embedgooglemap.net">google maps embed zoom</a>
-          </div>
-        </div>
-    </div>
-  );
+const mapStyles = {
+  width: "100%",
+  height: "500px",
+  position:"relative",
+  
 };
 
+
+class GoogleMap extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
+
+  componentDidMount() {
+    if (navigator.geolocation) {
+      navigator.geolocation.watchPosition(function(position) {
+        console.log("Latitude is :", position.coords.latitude);
+        console.log("Longitude is :", position.coords.longitude);
+      });
+    }
+  }
+
+
+
+  state = {  }
+  render() { 
+    return (
+      <div style={mapStyles}>
+        <MapLocation/>
+      </div>
+    );
+  }
+}
+ 
 export default GoogleMap;
