@@ -9,7 +9,6 @@ const mapStyles = {
   height: '100%',
   position: "relative",
   marginBottom: "2rem",
-    
   };
   
   class MapLocation extends Component {
@@ -30,7 +29,6 @@ const mapStyles = {
             initialCenter={{
               lat: '',
               lng: ''
-              
             }}
           >
            <Marker
