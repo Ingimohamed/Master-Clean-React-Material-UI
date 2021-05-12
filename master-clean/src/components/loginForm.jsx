@@ -36,7 +36,7 @@ class LoginForm extends Form {
         <Grid container>
           <Grid align="left" xs={12}>
               {this.renderLabel('email', 'Email', 'label')}
-              {this.renderInput('email','email','form-control')}
+              {this.renderInput('email','email','form-control')} 
             </Grid>
           <Grid align="left" xs={12}>
             {this.renderLabel('password', 'Password', 'label')}

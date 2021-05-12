@@ -1,15 +1,13 @@
-import React, { Component,useState } from 'react';
+import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
-import { withStyles,createMuiTheme } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import AllRights from './AllRights';
 import Container from '@material-ui/core/Container';
 import { Typography } from '@material-ui/core';
-import addingaddress from '../images/addingaddress.png';
-import IconButton from '@material-ui/core/IconButton';
-import UpdateAccountInfo from './accountSettingsModel1';
-import UpdatePhoneNumber from './accountSettingsModel2';
-import UpdatePassword from './accountSettingsModel3';
+import UpdateAccountInfo from './UpdateAccountInfo';
+import UpdatePassword from './UpdatePassword';
+import UpdatePhoneNumber from './UpdatePhoneNumber';
 
 
 const useStyles = theme => ({
@@ -178,8 +176,9 @@ class AccountSetting extends Component {
                     <Grid className={classes.firstCol} item md={6} sm={6} xs={12}>
                         <div className={classes.updateInfoBox}>
                             <Typography class={classes.titles}>
-                               Account Information 
-                                <UpdateAccountInfo />
+                                Account Information 
+                                {/* <UpdateAccountInfo /> */}
+                                <UpdateAccountInfo/>
                           
                             </Typography>
                             <Typography className={classes.subTitles} align="left" variant="body2" component="p">
