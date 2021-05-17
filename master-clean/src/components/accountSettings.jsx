@@ -173,14 +173,16 @@ class AccountSetting extends Component {
                 </Grid>
 
                 <Grid container>
+                   
                     <Grid className={classes.firstCol} item md={6} sm={6} xs={12}>
+                       
                         <div className={classes.updateInfoBox}>
-                            <Typography class={classes.titles}>
-                                Account Information 
-                                {/* <UpdateAccountInfo /> */}
-                                <UpdateAccountInfo/>
-                          
-                            </Typography>
+                                <Grid container>
+                                    <Grid item xs={6}>
+                                    <Typography class={classes.titles}>Account Information</Typography>
+                                    </Grid>
+                                    <Grid item xs={6}> <UpdateAccountInfo/> </Grid>
+                                </Grid>
                             <Typography className={classes.subTitles} align="left" variant="body2" component="p">
                                 First Name
                             </Typography>
@@ -209,30 +211,27 @@ class AccountSetting extends Component {
                     </Grid>
                     <Grid className={classes.secCol} item md={6} sm={6} xs={12}>
                         <div className={classes.updateInfoBox}>
-                        <Typography class={classes.titles}>
-                                Phone Number
-                         {/* <IconButton className={classes.iconButton}>     
-                            <img className={classes.imgIcon}  src={addingaddress} alt="addingaddress" />     
-                          </IconButton> */}
-                                <UpdatePhoneNumber/>
-                            </Typography>
+                             <Grid container>
+                                    <Grid item xs={6}>
+                                       <Typography class={classes.titles}>Phone Number</Typography>
+                                    </Grid>
+                                    <Grid item xs={6}> <UpdatePhoneNumber/> </Grid>
+                            </Grid>
                             <Typography  align="left" variant="body2" component="p">
                                <a className={classes.phoneNumber}  href="tel:201141987688">+201141987688</a>
                             </Typography>
                         </div>
                         <div className={classes.updateInfoBox}>
-                        <Typography class={classes.titles}>
-                                Password
-                        {/* <IconButton className={classes.iconButton}>      
-                            <img className={classes.imgIcon} type="button" src={addingaddress} alt="addingaddress" />     
-                          </IconButton> */}
-                                <UpdatePassword />
-                            </Typography>
+                               <Grid container>
+                                    <Grid item xs={6}>
+                                       <Typography class={classes.titles}>Password</Typography>
+                                    </Grid>
+                                    <Grid item xs={6}>  <UpdatePassword /> </Grid>
+                              </Grid>
                             <input className={classes.inputPassword} type="text"/>
                         </div>
                     </Grid>
                 </Grid>
-
                 <div className={classes.marginSpace}></div>
                 <AllRights />
                 </Container>

@@ -2,13 +2,23 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Joi from "joi-browser";
 import Form from './common/form';
+import axios from 'axios';
   
 
 class SignUpForm extends Form {
     state = {
+        posts:[],
         data: { firstname:"",lastname:"",address:"",streetname:"",email: "", password: "",confirmpassword:"" },
         errors:{},
     };
+
+    componentDidMount() {
+        console.log('hello from signup page');
+        const promise = axios.get('https://clean-master-backend.herokuapp.com/api/account/check_if_account_exists/?email=admin@admin.com');
+        console.log(promise);
+       
+    }
+    
   
     schema = {
         email: Joi.string().email().required().label('Email'),
@@ -26,7 +36,7 @@ class SignUpForm extends Form {
     }
     render() { 
         return (
-            <form>
+            <form onSubmit={this.handleSubmit}>
                 <Grid container >
                     <Grid align="left" xs={12} md={6} >
                     {this.renderLabel('firstname', 'First Name', 'label')}

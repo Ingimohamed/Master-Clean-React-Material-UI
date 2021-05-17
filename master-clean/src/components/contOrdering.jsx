@@ -25,7 +25,7 @@ class ContOrdering extends Component {
                 </Grid>
                 <Grid container>
                     <Grid item xs={12}>
-                    <AllRights/>
+                      <AllRights/>
                     </Grid>
                 </Grid>
             </Container>

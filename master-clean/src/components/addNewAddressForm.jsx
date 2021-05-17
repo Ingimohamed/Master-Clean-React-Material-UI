@@ -227,9 +227,9 @@ class AddNewAddressForm extends Form {
   };
 
   schema = {
-    fullname: Joi.string().required().label('Last Name'),
+    fullname: Joi.string().required().label('Full Name'),
     contactnumber: Joi.number().required().label('Contact Number'),
-    city:Joi.string().required().label('Contact Number'),
+    city:Joi.string().required().label('City'),
     address: Joi.string().required().label('Address'),
     housenumber:Joi.string().required().label('House Number'),
     streetname: Joi.string().required().label('Street Name'),
