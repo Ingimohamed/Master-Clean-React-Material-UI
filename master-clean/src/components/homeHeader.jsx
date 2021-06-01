@@ -8,6 +8,9 @@ import Container from "@material-ui/core/Container";
 import SignUpModal from './homeSignupModal';
 import LoginModal from './homeLoginModal';
 import Grid from '@material-ui/core/Grid';
+import jwtDecode from 'jwt-decode';
+
+
 const theme = createMuiTheme({
   status: {
     danger: "#00527D",
@@ -66,9 +69,29 @@ const useStyles = theme => ({
     maxWidth: "100%",
     marginTop: "16px",
     marginBottom: "16px",
-    marginLeft:"17%",
+    marginLeft: "17%",
+    [theme.breakpoints.up('xs')]: {
+      maxWidth: "100%",
+      marginTop: "16px",
+      marginBottom: "16px",
+      marginLeft: "auto",
+      marginRight: "auto",
+      textAlign:"center",
+    },
     [theme.breakpoints.up('sm')]: {
-      maxWidth: "30%",
+      maxWidth: "31%",
+      margin:"0px",
+    },
+    [theme.breakpoints.up('md')]: {
+      maxWidth: "23%",
+      margin:"0px",
+    },
+    [theme.breakpoints.up('lg')]: {
+      maxWidth: "19%",
+      margin:"0px",
+    },
+    [theme.breakpoints.up('xl')]: {
+      maxWidth: "19%",
       margin:"0px",
     },
   },
@@ -76,7 +99,17 @@ const useStyles = theme => ({
 
 
 class HomeHeader extends Component {
-
+  state = {
+   
+ }
+ componentDidMount() {
+  try {
+      const jwt = localStorage.getItem("token");
+      const user = jwtDecode(jwt);
+      this.setState({ user });
+  } catch (error) {}
+  
+}
 render(){
   const { classes } = this.props;
   return (
@@ -99,12 +132,12 @@ render(){
               Sign up now and make your first order
             </Typography>
             <Grid container>
-            <Grid className={classes.rowBtns} item xs={12} sm={6} md={6} lg={6} xl={6}>
-              <SignUpModal />
-            </Grid>
-            <Grid className={classes.rowBtns} item xs={12} sm={6} md={6} lg={6} xl={6}>
-              <LoginModal />
-            </Grid>
+                <Grid className={classes.rowBtns} item xs={12} sm={6} md={6} lg={6} xl={6}>
+                    <SignUpModal user={this.state.user} />
+                </Grid>
+               <Grid className={classes.rowBtns} item xs={12} sm={6} md={6} lg={6} xl={6}>
+                    <LoginModal user={this.state.user}/>
+               </Grid>
             </Grid>
           </Container>
         </Paper>

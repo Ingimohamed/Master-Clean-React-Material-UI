@@ -36,14 +36,15 @@ const useStyles = (theme) => ({
 
 class AccountSettingForm extends Form {
   state = {
-    data: { fullname: "", lastname: "", gender:"" },
+    data: { firstname: "", lastname: "", gender:"",email:"" },
     errors:{},
 };
 
 schema = {
-  fullname: Joi.string().required().label('Full Name'),
+  firstname: Joi.string().required().label('First Name'),
   lastname: Joi.string().required().label('Last Name'),
-  gender:Joi.string().required().label('Gender'),
+  gender: Joi.string().required().label('Gender'),
+  email: Joi.string().email().required().label('Email'),
 };
   
 doSubmit = () => {
@@ -56,8 +57,8 @@ doSubmit = () => {
       <form onSubmit={this.handleSubmit} className={classes.padForm}>
   <Grid container className="form-group row">
     <Grid item xs={12}>       
-            {this.renderLabel('fullname', 'Full Name', 'label_a')}
-            {this.renderInput('fullname','text','form-control_a')} 
+            {this.renderLabel('firstname', 'Full Name', 'label_a')}
+            {this.renderInput('firstname','text','form-control_a')} 
     </Grid>
   </Grid>
             
@@ -72,6 +73,12 @@ doSubmit = () => {
     <Grid item xs={12}>
             {this.renderLabel('gender', 'Gender', 'label_a')}
             {this.renderInput('gender','text','form-control_a')} 
+    </Grid>
+        </Grid> 
+        <Grid container className="form-group row">
+    <Grid item xs={12}>
+            {this.renderLabel('email', 'Email', 'label_a')}
+            {this.renderInput('email','email','form-control_a')} 
     </Grid>
         </Grid>
 

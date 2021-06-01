@@ -18,7 +18,7 @@ const Home = () => {
       <HomeHeader />
       <Howitworks />
 
-      <OurFeatures />
+      <OurFeatures/>
       <OurServices />
     </ThemeProvider>
   );

@@ -155,7 +155,11 @@ const useStyles = theme => ({
     },
 });
 class AccountSetting extends Component {
-    state = {  }
+    state = {
+        UpdateAccountInfo: UpdateAccountInfo,
+        UpdatePhoneNumber: UpdatePhoneNumber,
+        UpdatePassword: UpdatePassword,
+    }
     render() { 
         const { classes } = this.props;
         return ( 
@@ -208,7 +212,7 @@ class AccountSetting extends Component {
                                omar.khaled@gmail.com
                             </Typography>
                         </div>
-                    </Grid>
+                    </Grid> 
                     <Grid className={classes.secCol} item md={6} sm={6} xs={12}>
                         <div className={classes.updateInfoBox}>
                              <Grid container>

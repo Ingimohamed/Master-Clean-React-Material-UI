@@ -1,6 +1,7 @@
-import React from 'react';
-import './App.css';
-import { Route, Switch } from 'react-router-dom';
+import React, { Component } from 'react';
+import { Route,Redirect, Switch } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import jwtDecode from 'jwt-decode';
 import Home from './components/Home';
 import PrimarySearchAppBar from './components/navbar';
 import StickyFooter from './components/footer';
@@ -13,12 +14,30 @@ import AddressBook from './components/addressBook';
 import AccountSetting from './components/accountSettings';
 import ContOrdering from './components/contOrdering';
 import Admin from './components/Admin';
+import NotFound from './components/notFound';
+import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <PrimarySearchAppBar />
-      <div className="content">
+
+
+class App extends Component {
+  state = {};
+
+
+  // componentDidMount() {
+  //   try {
+  //       const jwt = localStorage.getItem("token");
+  //       const user = jwtDecode(jwt);
+  //       this.setState({ user });
+  //   } catch (error) {}
+    
+  // }
+
+  render() {
+    return (
+      <React.Fragment>
+        <ToastContainer />
+      <PrimarySearchAppBar user={this.state.user} />
+      <main className="content">
         <Switch>
           <Route path="/Order" component={ Order } />
           <Route path="/Contactus" component={Contactus} />
@@ -31,15 +50,17 @@ function App() {
 
           <Route path="/ContOrdering" component={ContOrdering} />
           <Route path="/Admin" component={Admin} />
-          
-          <Route path="/" component={ Home } />
+          <Route path="/" component={Home} />
+           
         </Switch>
-      </div>
+      </main>
         
       <StickyFooter />
       
-    </div>
-  );
+      </React.Fragment>
+    )
+  }
 }
+
 
 export default App;

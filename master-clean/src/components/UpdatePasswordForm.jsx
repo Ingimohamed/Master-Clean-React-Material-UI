@@ -4,6 +4,7 @@ import Form from './common/form';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from "@material-ui/core/styles";
 import Button from '@material-ui/core/Button';
+import CustomizedDialogs from './UpdatePassword';
 
 const useStyles = (theme) => ({
   btn: {
@@ -37,7 +38,8 @@ const useStyles = (theme) => ({
 class UpdatePasswordForm extends Form {
   state = {
     data: { oldpassword: "", password: "", confrimnewpassword:"" },
-    errors:{},
+    errors: {},
+    
 };
 
 schema = {
@@ -52,6 +54,7 @@ doSubmit = () => {
 }
   render() {
     const { classes } = this.props;
+    
     return (
       <form className={classes.padForm}>
   <Grid container className="form-group row">

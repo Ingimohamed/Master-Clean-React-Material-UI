@@ -1,21 +1,16 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
-import clsx from "clsx";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
-import AccordionActions from "@material-ui/core/AccordionActions";
-import Typography from "@material-ui/core/Typography";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import Chip from "@material-ui/core/Chip";
 import Button from "@material-ui/core/Button";
-import Divider from "@material-ui/core/Divider";
-import shirt from "../images/shirt.png";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
+import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
+import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 
 const useStyles = (theme) => ({
   root: {
@@ -24,8 +19,9 @@ const useStyles = (theme) => ({
   details: {
     alignItems: "center",
     backgroundColor: "white",
-    boxShadow: "2px 2px 4px",
+    boxShadow: "2px 2px 4px lightgrey",
     borderRadius: "15px",
+    border:"1px solid #C3E5F0",
     marginTop: "-76px",
     paddingTop: "56px",
     width: "183px",
@@ -53,6 +49,47 @@ const useStyles = (theme) => ({
     backgroundColor: "transparent",
     boxShadow: "none",
   },
+  btnAddToBasket: {
+    marginBottom: "1.5rem",
+    marginTop: "1.5rem",
+    marginLeft: "auto",
+    marginRight: "auto",
+    display: "block",
+    borderRadius: "18px",
+    padding: "3px 12px",
+    borderWidth: "0px",
+    border: "1px solid #C3E5F0",
+    outline: "navajowhite",
+    boxShadow: "2px 2px 4px lightgrey",
+    backgroundColor: "white",
+    color: "#00527D",
+    fontWeight: "500",
+    fontSize: "14px",
+    textTransform: "none",
+  },
+  checkboxIcon: {
+    color: "#C3E5F0 !important",
+    padding:"1px 2px 2px 9px",
+  },
+  checkboxLabel: {
+    color: "#00527D",
+    fontFamily: '"Poppins", sans-serif',
+    fontSize: "13px",
+    fontWeight: "600",
+    marginRight:"0px",
+    "& .MuiTypography-body1": {
+      color: "#00527D",
+      fontFamily: '"Poppins", sans-serif',
+      fontSize: "13px",
+      fontWeight: "600",
+    },
+  },
+  priceLabel: {
+    color: "#00527D",
+    fontFamily: '"Poppins", sans-serif',
+    fontSize: "13px",
+    fontWeight: "600",
+  }
 });
 
 class OrderItem extends Component {
@@ -89,51 +126,63 @@ class OrderItem extends Component {
             </AccordionSummary>
 
             <AccordionDetails className={classes.details}>
-              <Grid container spacing={3}>
-                <Grid item xs={12}>
+              <Grid container>
+                <Grid item xs={8}>
                   <FormControlLabel
+                    className={classes.checkboxLabel}
                     control={
                       <Checkbox
                         checked={this.state.checkedF}
                         onChange={handleChange}
                         name="checkedF"
-                        color="primary"
+                        icon={<RadioButtonUncheckedIcon />}
+                        checkedIcon={<RadioButtonCheckedIcon />}
+                        className={classes.checkboxIcon}
                       />
                     }
-                    label="Primary"
+                    label="Dry Clean"
                   />
                 </Grid>
+                <Grid item xs={4} align="right"> <label className={classes.priceLabel} htmlFor="">100 L.E</label> </Grid>
 
-                <Grid item xs={12}>
+                <Grid item xs={8}>
                   <FormControlLabel
+                    className={classes.checkboxLabel}
                     control={
                       <Checkbox
                         checked={this.state.checkedB}
                         onChange={handleChange}
                         name="checkedB"
-                        color="primary"
+                        icon={<RadioButtonUncheckedIcon />}
+                        checkedIcon={<RadioButtonCheckedIcon />}
+                        className={classes.checkboxIcon}
                       />
                     }
-                    label="Primary"
+                    label="Wash"
                   />
                 </Grid>
+                <Grid item xs={4} align="right"> <label className={classes.priceLabel} htmlFor="">100 L.E</label> </Grid>
 
-                <Grid item xs={12}>
+                <Grid item xs={8}>
                   <FormControlLabel
+                    className={classes.checkboxLabel}
                     control={
                       <Checkbox
                         checked={this.state.checkedA}
                         onChange={handleChange}
                         name="checkedA"
-                        color="primary"
+                        icon={<RadioButtonUncheckedIcon />}
+                        checkedIcon={<RadioButtonCheckedIcon />}
+                        className={classes.checkboxIcon}
                       />
                     }
-                    label="Primary"
+                    label="Iron"
                   />
                 </Grid>
+                <Grid item xs={4} align="right"> <label className={classes.priceLabel} htmlFor="">100 L.E</label> </Grid>
 
-                <Button variant="outlined" color="primary">
-                  Primary
+                <Button  className={classes.btnAddToBasket}>
+                  Add to basket
                 </Button>
               </Grid>
             </AccordionDetails>

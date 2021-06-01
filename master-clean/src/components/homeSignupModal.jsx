@@ -9,6 +9,7 @@ import NavLogoModal from '../images/NavLogoModal.png';
 import IconButton from '@material-ui/core/IconButton';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import SignUpForm from './signUpForm';
+import Link from '@material-ui/core/Link';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -48,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
  },
 }));
 
-export default function SignUpModal() {
+export default function SignUpModal({user}) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState('paper');
@@ -74,9 +75,24 @@ export default function SignUpModal() {
 
   return (
     <div>
-      <Button className={classes.btn} onClick={handleClickOpen('body')}>
-        Sign up
-        </Button>
+      {!user && (
+        <React.Fragment>
+           <Button className={classes.btn} onClick={handleClickOpen('body')}>
+              Sign up
+            </Button>
+        </React.Fragment>
+      )}
+      {user && (
+        <React.Fragment>
+          <Button className={classes.btn} onClick={handleClickOpen('body')}>
+              <Link to="/logout">
+                 Logout
+              </Link>  
+            </Button>
+
+        </React.Fragment>
+      )}
+     
       <Dialog
         open={open}
         onClose={handleClose}

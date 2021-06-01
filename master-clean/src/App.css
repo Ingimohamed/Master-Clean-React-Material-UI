@@ -488,6 +488,18 @@ h4 span {
     overflow-y: auto!important;
     padding-top: 116px!important;
    }
+   .signup_firstname{
+     padding-right: 1rem!important;
+   }
+   .signup_lastname{
+    padding-left: 1rem!important;
+   }
+   .signup_password{
+    padding-right: 1rem!important;
+   }
+   .signup_confpassword{
+    padding-left: 1rem!important;
+   }
 /* /Sign Up Modal Home */
 
 /* start - Account setting Modals (Three models) */

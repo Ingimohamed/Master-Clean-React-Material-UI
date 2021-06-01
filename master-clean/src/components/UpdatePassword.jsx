@@ -119,7 +119,7 @@ const DialogTitle = withStyles(styles)((props) => {
         </IconButton>
       ) : null}
     </MuiDialogTitle>
-  );
+  ); 
 });
 
 

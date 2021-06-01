@@ -46,6 +46,7 @@ const useStyles = theme => ({
 
 class OurFeaturesItem extends Component {
   state = {
+    id: this.props.id,
     title: this.props.title,
     images: this.props.images,
     body:this.props.body,
@@ -58,16 +59,16 @@ class OurFeaturesItem extends Component {
         <Grid container spacing={2}>
           <Grid xs={4} item>
             <div className={classes.imageBox}>
-                <img className={classes.image} src={this.state.images} alt="feature"/>
+                <img key={this.state.id} className={classes.image} src={this.state.images} alt="feature"/>
             </div>
           </Grid>
           <Grid item xs={8} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
-                <Typography gutterBottom variant="subtitle1" align="left" className={classes.cartTitle}>
+                <Typography  key={this.state.id} gutterBottom variant="subtitle1" align="left" className={classes.cartTitle}>
                     {this.state.title}
                 </Typography>
-                <Typography className={classes.cartBody} align="left" variant="body2" gutterBottom>
+                <Typography  key={this.state.id} className={classes.cartBody} align="left" variant="body2" gutterBottom>
                   {this.state.body}
                 </Typography>
               </Grid>

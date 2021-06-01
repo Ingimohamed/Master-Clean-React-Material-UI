@@ -114,19 +114,12 @@ export default function PrimarySearchAppBar() {
         setAnchorEl(event.currentTarget);
     };
 
-  const menuId = 'primary-search-account-menu';
-  const renderMenu = (
-    <Menu
-     
-    >
-      {/* <MenuItem onClick={handleMenuClose}>
-         <NavLink to="/ShoppingCart"> My Cart </NavLink>
-      </MenuItem>
-      <MenuItem onClick={handleMenuClose}>
-          <NavLink to="/ShoppingCart"> My Cart </NavLink>
-     </MenuItem> */}
-    </Menu>
-  );
+  // const menuId = 'primary-search-account-menu';
+  // const renderMenu = (
+  //   <Menu>
+
+  //   </Menu>
+  // );
 
   const mobileMenuId = 'primary-search-account-menu-mobile';
   const renderMobileMenu = (
@@ -239,7 +232,7 @@ export default function PrimarySearchAppBar() {
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
-      {renderMenu}
+      {/* {renderMenu} */}
     </div>
   );
 }

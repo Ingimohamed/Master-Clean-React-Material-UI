@@ -38,6 +38,7 @@ const useStyles = theme => ({
         marginTop:"10px",
     },
     btnCart: {
+        textAlign:"center",
         borderRadius: "10px",
         color: "#00527D",
         fontWeight: "bold",

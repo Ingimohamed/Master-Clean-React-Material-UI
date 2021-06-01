@@ -29,13 +29,22 @@ const useStyles = theme => ({
     maxWidth: "22%",
   },
   img: {
-    width: "65%",
-    [theme.breakpoints.up('md')]: {
-      width: "82%",
+      width: "48%",
+      display: "block",
+    margin: "auto",
+    [theme.breakpoints.up('xs')]: {
+      width: "48%",
+      display: "block",
+      margin:"auto",
     },
     [theme.breakpoints.up('sm')]: {
-      width: "73%",
+      width: "48%",
     },
+    [theme.breakpoints.up('md')]: {
+      width: "62%",
+    },
+    
+    
   },
   h4: {
     color: "#00527D",
@@ -52,10 +61,19 @@ const useStyles = theme => ({
     marginTop: "0px",
     marginBottom:"1rem",
     fontFamily: "'Poppins', sans-serif",
-    fontSize:"1rem",
+    fontSize: "1rem",
+    padding: "0 7rem",
+    [theme.breakpoints.up('sm')]: {
+      padding: "0 1rem",
+    },
+    [theme.breakpoints.up('md')]: {
+      padding: "0 2rem",
+    },
   },
   column: {
-    padding:"21px",
+    [theme.breakpoints.up('xs')]: {
+      marginBottom:"2rem",
+    }
   },
 });
 
@@ -71,8 +89,8 @@ class HowitworksImages extends Component {
         
           <Grid className={classes.column}  item xs={12} sm={6} md={3}>
               <img className={classes.img} src={this.state.images} alt="" />
-        <Typography className={classes.h4}>{this.state.titleh4}</Typography>
-        <Typography className={classes.p}>{this.state.titleP}</Typography>
+              <Typography className={classes.h4}>{this.state.titleh4}</Typography>
+              <Typography className={classes.p}>{this.state.titleP}</Typography>
           </Grid>
             
      );
