@@ -65,18 +65,6 @@ class SignUpForm extends Form {
                       {this.renderInput('confirmpassword','password','form-control')}
                     </Grid>
            </Grid>
-                {/* <Grid container>
-                    <Grid align="left" xs={12}>
-                    {this.renderLabel('address', 'Address', 'label')}
-                    {this.renderInput('address','text','form-control')}
-                </Grid>
-           </Grid>                      */}
-                {/* <Grid container>
-                    <Grid align="left" xs={12}>
-                       {this.renderLabel('streetname', 'Street Name', 'label')}
-                       {this.renderInput('streetname','text','form-control')}
-                    </Grid>
-              </Grid> */}
                 <Grid container alignItems="center" className="buttonMtMb">
                     <Grid item className="centered">
                         {this.renderButton("Sign up","signupBtn-modal")}

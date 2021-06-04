@@ -80,22 +80,14 @@ export default function LoginModal({user}) {
 
   return (
     <div>
-      {!user && (
+      
         <React.Fragment>
           <Button className={classes.btn} onClick={handleClickOpen('body')}>
              Login
           </Button>
         </React.Fragment>
-      )}
-      {user && (
-        <React.Fragment>
-          <Button className={classes.btn} onClick={handleClickOpen('body')}>
-            <Link to="/Profile">
-                    {user.name}
-            </Link>  
-          </Button>
-        </React.Fragment>
-      )}
+      
+     
       
       <Dialog
         open={open}

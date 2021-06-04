@@ -75,23 +75,13 @@ export default function SignUpModal({user}) {
 
   return (
     <div>
-      {!user && (
+      
         <React.Fragment>
            <Button className={classes.btn} onClick={handleClickOpen('body')}>
               Sign up
             </Button>
         </React.Fragment>
-      )}
-      {user && (
-        <React.Fragment>
-          <Button className={classes.btn} onClick={handleClickOpen('body')}>
-              <Link to="/logout">
-                 Logout
-              </Link>  
-            </Button>
-
-        </React.Fragment>
-      )}
+      
      
       <Dialog
         open={open}

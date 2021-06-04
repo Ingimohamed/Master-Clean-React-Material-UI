@@ -85,10 +85,6 @@ class Howitworks extends Component {
               How it works
             </Typography>
           </Grid>
-           
-          {/* {this.state.images.map(image => <Grid key={image} item xs={12} sm={6} md={3}>
-            <img className={classes.img} src={image} alt="" />
-          </Grid>)} */}
             
           {this.state.works.map((work) => (  
                 <HowitworksImages
@@ -98,8 +94,7 @@ class Howitworks extends Component {
                   images={work.images}
                 />
             ))}
-            
-            
+             
         </Grid>
       </Container>
     </ThemeProvider>

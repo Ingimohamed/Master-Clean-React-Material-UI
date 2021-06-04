@@ -8,7 +8,7 @@ import Container from "@material-ui/core/Container";
 import SignUpModal from './homeSignupModal';
 import LoginModal from './homeLoginModal';
 import Grid from '@material-ui/core/Grid';
-import jwtDecode from 'jwt-decode';
+//import jwtDecode from 'jwt-decode';
 
 
 const theme = createMuiTheme({
@@ -102,14 +102,14 @@ class HomeHeader extends Component {
   state = {
    
  }
- componentDidMount() {
-  try {
-      const jwt = localStorage.getItem("token");
-      const user = jwtDecode(jwt);
-      this.setState({ user });
-  } catch (error) {}
+//  componentDidMount() {
+//   try {
+//       const jwt = localStorage.getItem("token");
+//       const user = jwtDecode(jwt);
+//       this.setState({ user });
+//   } catch (error) {}
   
-}
+// }
 render(){
   const { classes } = this.props;
   return (
@@ -133,10 +133,10 @@ render(){
             </Typography>
             <Grid container>
                 <Grid className={classes.rowBtns} item xs={12} sm={6} md={6} lg={6} xl={6}>
-                    <SignUpModal user={this.state.user} />
+                    <SignUpModal />
                 </Grid>
                <Grid className={classes.rowBtns} item xs={12} sm={6} md={6} lg={6} xl={6}>
-                    <LoginModal user={this.state.user}/>
+                    <LoginModal />
                </Grid>
             </Grid>
           </Container>

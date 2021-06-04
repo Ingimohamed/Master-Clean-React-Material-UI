@@ -195,21 +195,3 @@ class OrderItem extends Component {
 
 export default withStyles(useStyles)(OrderItem);
 
-// export default function DetailedAccordion() {
-//   const classes = useStyles();
-
-//   const [state, setState] = React.useState({
-//     checkedA: true,
-//     checkedB: true,
-//     checkedF: true,
-//     checkedG: true,
-//   });
-
-//   const handleChange = (event) => {
-//     setState({ ...state, [event.target.name]: event.target.checked });
-//   };
-
-//   return (
-
-//   );
-// }

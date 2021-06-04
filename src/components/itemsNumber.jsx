@@ -11,10 +11,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize:"1rem",
   },
 }));
-//Stateless Functional Component
+
 const ItemsNumber = ({ totalCounters }) => {
   const classes = useStyles();
-  //return  totalCounters > 1 ? totalCounters + "Items" : totalCounters + "Item";
     return (
       <Typography className={classes.Typography}>
         {

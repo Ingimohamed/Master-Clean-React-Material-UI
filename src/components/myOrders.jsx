@@ -204,7 +204,9 @@ class MyOrders extends Component {
                 </div>
 
                 <div className={classes.marginSpace}></div>
+
                 <AllRights />
+                
             </Container>
          );
     }

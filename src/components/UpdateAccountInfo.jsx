@@ -129,12 +129,6 @@ const DialogContent = withStyles((theme) => ({
   },
 }))(MuiDialogContent);
 
-const DialogActions = withStyles((theme) => ({
-  root: {
-    margin: 0,
-    padding:"2rem",
-  },
-}))(MuiDialogActions);
 
 export default function UpdateAccountInfo(props) {
     const classes = useStyles();
@@ -159,15 +153,6 @@ export default function UpdateAccountInfo(props) {
         <DialogContent>
                   <AccountSettingForm />          
         </DialogContent>
-              {/* <DialogActions>     
-        <Grid container className="form-group row">
-            <Grid item xs={6}>
-                <Button autoFocus className={classes.btn} onClick={handleClose} color="primary">
-                Cancel
-            </Button>
-            </Grid>
-        </Grid>
-        </DialogActions> */}
       </Dialog>
     </div>
   );

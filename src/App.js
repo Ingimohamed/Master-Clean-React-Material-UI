@@ -14,7 +14,6 @@ import AddressBook from './components/addressBook';
 import AccountSetting from './components/accountSettings';
 import ContOrdering from './components/contOrdering';
 import Admin from './components/Admin';
-import NotFound from './components/notFound';
 import './App.css';
 
 
